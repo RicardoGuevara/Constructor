@@ -1,0 +1,9 @@
+function sayError(evt)
+{
+	alert( "ha ocurrido un error" );
+}
+
+function sayHello(evt)
+{
+	alert( "hola, bienvenido a la página" );
+}
