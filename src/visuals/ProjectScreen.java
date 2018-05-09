@@ -18,23 +18,27 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import javafx.application.Platform;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.Scene;
+import javafx.scene.web.WebView;
 import nodos.NodoM;
 
 /**
  *
  * @author RICARDO
  */
-public class ProyectScreen extends javax.swing.JFrame {
+public class ProjectScreen extends javax.swing.JFrame {
 
     /**
      * Creates new form StartVisualPage
      */
     
-    public ProyectScreen(NodoM components, String tittle, String username)
+    public ProjectScreen(NodoM components, String tittle, String username)
     {
         this.components=components;
         this.title=tittle;
-        ProyectScreen.userName=username;
+        ProjectScreen.userName=username;
         
         initComponents();
         
@@ -42,9 +46,9 @@ public class ProyectScreen extends javax.swing.JFrame {
         this.reorganize();
     }
     
-    public ProyectScreen(String tittle, String username) 
+    public ProjectScreen(String tittle, String username) 
     {
-        ProyectScreen.title=tittle;
+        ProjectScreen.title=tittle;
         this.userName=username;
         
         initComponents();
@@ -52,7 +56,7 @@ public class ProyectScreen extends javax.swing.JFrame {
         this.setTitle(userName+" - PROYECT - "+tittle);
     }
 
-    public ProyectScreen() {
+    public ProjectScreen() {
         initComponents();
     }
     
@@ -69,7 +73,6 @@ public class ProyectScreen extends javax.swing.JFrame {
         labelList = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        ruta = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         inspectHtml = new javax.swing.JTextArea();
@@ -93,7 +96,7 @@ public class ProyectScreen extends javax.swing.JFrame {
         preview = new javax.swing.JButton();
         actualizar = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        pruevaDeNavegador = new javax.swing.JTextArea();
+        pruebaDeNavegador = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -133,17 +136,11 @@ public class ProyectScreen extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+            .addGap(0, 563, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addComponent(ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(321, Short.MAX_VALUE))
+            .addGap(0, 562, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("NAVEGADOR", jPanel1);
@@ -203,6 +200,11 @@ public class ProyectScreen extends javax.swing.JFrame {
         jTabbedPane1.addTab("HISTORIAL", historialPanel);
 
         elementType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PARRAFO", "BOTÓN", "TEXTBOX", "CANVAS" }));
+        elementType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elementTypeActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("tipo de elemento html:");
 
@@ -237,9 +239,9 @@ public class ProyectScreen extends javax.swing.JFrame {
             }
         });
 
-        pruevaDeNavegador.setColumns(20);
-        pruevaDeNavegador.setRows(5);
-        jScrollPane4.setViewportView(pruevaDeNavegador);
+        pruebaDeNavegador.setColumns(20);
+        pruebaDeNavegador.setRows(5);
+        jScrollPane4.setViewportView(pruebaDeNavegador);
 
         javax.swing.GroupLayout agregarLayout = new javax.swing.GroupLayout(agregar);
         agregar.setLayout(agregarLayout);
@@ -445,6 +447,14 @@ public class ProyectScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_previewActionPerformed
 
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        ruta = pruebaDeNavegador.getText();
+        ruta = ruta.replace('\\', '/');
+        ruta = "file:///"+ruta;
+        NavegadorPrueba navegadorPrueba = new NavegadorPrueba(ruta);
+         
+         navegadorPrueba.main();
+         
+        
         reloadAll();
     }//GEN-LAST:event_actualizarActionPerformed
 
@@ -492,6 +502,10 @@ public class ProyectScreen extends javax.swing.JFrame {
         //}
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void elementTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elementTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_elementTypeActionPerformed
 
     
     private HtmlComponent createComponent()
@@ -580,8 +594,8 @@ public class ProyectScreen extends javax.swing.JFrame {
     private void reloadNav(String url)
     {
         //reemplazar esto por la funcionalidad del navegador
-        pruevaDeNavegador.setText(url);
-        this.ruta.setText(url);
+        pruebaDeNavegador.setText(url);
+        
     }
     
     private void reloadInspectHtml()
@@ -673,14 +687,18 @@ public class ProyectScreen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProyectScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProjectScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProyectScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProjectScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProyectScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProjectScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProyectScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProjectScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -689,7 +707,7 @@ public class ProyectScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProyectScreen().setVisible(true);
+                new ProjectScreen().setVisible(true);
             }
         });
     }
@@ -715,6 +733,7 @@ public class ProyectScreen extends javax.swing.JFrame {
     
     HtmlConstruction p = new HtmlConstruction();
     
+    String ruta = "";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizar;
     private javax.swing.JPanel agregar;
@@ -752,8 +771,7 @@ public class ProyectScreen extends javax.swing.JFrame {
     private javax.swing.JButton newelement;
     private javax.swing.JButton preview;
     private javax.swing.JMenu proyectOptions;
-    private javax.swing.JTextArea pruevaDeNavegador;
-    private javax.swing.JLabel ruta;
+    private javax.swing.JTextArea pruebaDeNavegador;
     private javax.swing.JMenuItem saveProyect;
     private javax.swing.JMenuItem userBack;
     private javax.swing.JMenu userOptions;

@@ -1,0 +1,19 @@
+.clickable {
+	
+	-fx-text-fill: red;
+	
+	
+}
+
+.clickable:hover {
+	
+	
+	-fx-background-color: gold;
+	
+}
+
+.clickable:focused{
+	
+	-fx-background-color: gray;
+	
+}

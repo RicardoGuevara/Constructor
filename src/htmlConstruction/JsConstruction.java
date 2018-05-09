@@ -14,7 +14,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import nodos.NodoM;
-import visuals.ProyectScreen;
+import visuals.ProjectScreen;
 
 /**
  *

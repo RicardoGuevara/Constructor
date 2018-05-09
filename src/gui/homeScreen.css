@@ -1,0 +1,42 @@
+#leftAnchor {
+	
+	-fx-background-color: azure;
+	
+}
+
+#topAnchor {
+	
+	-fx-background-color: gold;
+	
+}
+HBox {
+	-fx-spacing: 35;
+	
+}
+
+HBox Label {
+	
+	-fx-padding: 0;
+	-fx-font-size: 25;
+}
+
+HBox Label:hover{
+	
+	-fx-padding: 0;
+	-fx-text-fill: #FFFFF0;
+}
+
+HBox Label:pressed {
+	
+	-fx-padding: 0;
+	/* -fx-font-size: 25; */
+	-fx-text-fill: gray;
+	-fx-translate-y: 2.5;
+	-fx-translate-x: 4;
+	
+	}
+	
+	HBox Label:focused{
+	
+	-fx-text-fill: white;
+}

@@ -205,7 +205,7 @@ public class User extends javax.swing.JFrame {
     private void newProyectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newProyectMouseClicked
         
         String tittle = JOptionPane.showInputDialog(null, "Titulo de proyecto");
-        HtmlConstructor.proyecto= new ProyectScreen(tittle,userName);
+        HtmlConstructor.proyecto= new ProjectScreen(tittle,userName);
         this.setVisible(false);
         HtmlConstructor.proyecto.setVisible(true);
         

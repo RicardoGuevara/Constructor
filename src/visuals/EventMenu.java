@@ -149,7 +149,7 @@ public class EventMenu extends javax.swing.JFrame {
         JsEvent p= new JsEvent(determinarFuncion(), determinarEvento(),intro, null);
         JsConstruction.events.add(p);
         
-        js.documentConstruction(ProyectScreen.title);
+        js.documentConstruction(ProjectScreen.title);
         
         HtmlConstructor.proyecto.reloadAll();
         

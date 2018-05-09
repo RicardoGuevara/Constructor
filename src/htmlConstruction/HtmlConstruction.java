@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 import javax.swing.JOptionPane;
 import nodos.NodoM;
-import visuals.ProyectScreen;
+import visuals.ProjectScreen;
 
 public class HtmlConstruction implements Runnable{
 
@@ -78,7 +78,7 @@ public class HtmlConstruction implements Runnable{
             escribir.write("<DOCTYPE! html>");
             escribir.newLine();
             
-            escribir.write("<!--"+ProyectScreen.userName+"-->");
+            escribir.write("<!--"+ProjectScreen.userName+"-->");
             escribir.newLine();
             
             escribir.write("<html>");
