@@ -210,6 +210,12 @@ public class ProjectScreen extends javax.swing.JFrame {
 
         jLabel2.setText("valor inicial");
 
+        initialValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                initialValueActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("altura");
 
         alto.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
@@ -506,6 +512,10 @@ public class ProjectScreen extends javax.swing.JFrame {
     private void elementTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elementTypeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_elementTypeActionPerformed
+
+    private void initialValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_initialValueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_initialValueActionPerformed
 
     
     private HtmlComponent createComponent()
