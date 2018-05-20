@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Circle?>
 
-
 <StackPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controlador">
    <children>
       <Pane cache="true" cacheHint="SCALE_AND_ROTATE" depthTest="DISABLE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="302.0" stylesheets="@test.css">
@@ -18,7 +17,7 @@
             <TextField id="usuario_field" fx:id="usuario_field" layoutX="32.0" layoutY="269.0" prefHeight="29.0" prefWidth="239.0" />
             <Label layoutX="32.0" layoutY="321.0" text="Contraseña" />
             <PasswordField id="contrasena_field" fx:id="passwd_field" layoutX="30.0" layoutY="340.0" prefHeight="29.0" prefWidth="239.0" />
-            <Button fx:id="login_button" layoutX="32.0" layoutY="403.0" mnemonicParsing="false" onAction="#helloWorldTest" prefHeight="29.0" prefWidth="91.0" text="Iniciar Sesion" />
+            <Button id="login_button" fx:id="login_button" layoutX="32.0" layoutY="403.0" mnemonicParsing="false" onAction="#helloWorldTest" prefHeight="29.0" prefWidth="91.0" text="Iniciar Sesion" />
             <Button fx:id="register_button" layoutX="180.0" layoutY="403.0" mnemonicParsing="false" onAction="#helloWorldTest" prefHeight="29.0" prefWidth="91.0" text="Registrarse" />
             <Label id="titulo" layoutX="81.0" layoutY="6.0" text="Bienvenido" />
             <Circle id="imagen" fx:id="circleImage" fill="#35ff00" layoutX="154.0" layoutY="151.0" radius="93.0" stroke="TRANSPARENT" strokeType="INSIDE" />

@@ -112,55 +112,18 @@ public class UserLog extends javax.swing.JFrame {
 
     private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
         
-        try
-        {
-            
-            BufferedWriter agregar = new BufferedWriter(new FileWriter("users.txt",true));
-            
-                agregar.write(name.getText()+";"+pass.getText());
-                agregar.newLine();
-            
-            agregar.close();
-            JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente");
-        }
-        catch(IOException e)
-        {
-            JOptionPane.showMessageDialog(null, "error al registrar el usuario");
-        }
+        HtmlConstructor.registrar(name.getText(),pass.getText());
         
     }//GEN-LAST:event_registerActionPerformed
 
     private void logActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logActionPerformed
         
-        try
-        {
-            BufferedReader leer = new BufferedReader(new FileReader("users.txt"));
-                
-                String linea = leer.readLine();
-                
-                while(linea!=null && !linea.isEmpty())
-                {
-                    if (linea.equals(name.getText()+";"+pass.getText())) 
-                    {
-                        HtmlConstructor.menu=new User(name.getText());
+        if (HtmlConstructor.log(name.getText(),pass.getText())) {
+            
+            HtmlConstructor.menu=new User(name.getText());
                         HtmlConstructor.ingresar=this;
                         this.setVisible(false);
                         HtmlConstructor.menu.setVisible(true);
-                        linea=null;
-                    }
-                    else
-                    {
-                        System.out.println("sino");
-                        linea=leer.readLine();
-                    }
-                    
-                }
-                
-            leer.close();
-        }
-        catch(IOException e)
-        {
-            JOptionPane.showMessageDialog(null, "error de ingreso");
         }
         
     }//GEN-LAST:event_logActionPerformed
