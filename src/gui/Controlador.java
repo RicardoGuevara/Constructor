@@ -91,6 +91,7 @@ public class Controlador {
         catch(Exception e)
         {
             System.out.println("Not a button");
+            e.printStackTrace();
         }
     }
 

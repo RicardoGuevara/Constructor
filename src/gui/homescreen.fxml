@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1000.0" prefHeight="740.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/9.0.1" stylesheets="@homeScreen.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HomeScreenControl">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1000.0" prefHeight="740.0" prefWidth="1190.0" stylesheets="@homeScreen.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HomeScreenControl">
    <left>
       <AnchorPane id="leftAnchor" minWidth="70.0" prefHeight="757.0" prefWidth="201.0" style="-fx-background-color: azure;" BorderPane.alignment="CENTER">
          <children>
@@ -21,9 +21,9 @@
    <top>
       <AnchorPane id="topAnchor" prefHeight="76.0" prefWidth="1190.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox layoutX="200.0" prefHeight="76.0" prefWidth="618.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="371.24750317686846" AnchorPane.topAnchor="0.0">
+            <HBox id="box" layoutX="200.0" prefHeight="76.0" prefWidth="618.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="371.24750317686846" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label text="NUEVO">
+                  <Label id="new_project" accessibleRole="BUTTON" text="NUEVO">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
