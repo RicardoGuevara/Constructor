@@ -29,8 +29,8 @@ public class HtmlConstructor {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        //fxMain.main(args);
-        ingresar.setVisible(true);
+        fxMain.main(args);
+        //ingresar.setVisible(true);
     }
 
 //REGISTRO Y VERIFICACIÓN_______________________________________________________
