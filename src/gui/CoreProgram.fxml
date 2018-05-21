@@ -143,9 +143,9 @@
                         <TextField fx:id="initial_val" layoutX="14.0" layoutY="59.0" prefHeight="25.0" prefWidth="166.0" />
                         <Label layoutX="14.0" layoutY="111.0" text="Ancho" />
                         <Label layoutX="108.0" layoutY="111.0" text="Alto" />
-                        <Spinner fx:id="ancho" id="ancho" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="70.0" />
-                        <Spinner fx:id="alto" id="alto" layoutX="100.0" layoutY="142.0" prefHeight="25.0" prefWidth="67.0" />
-                        <Button id="agregar" onAction="#addComp" layoutX="17.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="169.0" text="Agregar" />
+                        <Spinner id="ancho" fx:id="ancho" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="70.0" />
+                        <Spinner id="alto" fx:id="alto" layoutX="100.0" layoutY="142.0" prefHeight="25.0" prefWidth="67.0" />
+                        <Button id="agregar" layoutX="17.0" layoutY="262.0" mnemonicParsing="false" onAction="#addComp" prefHeight="39.0" prefWidth="169.0" text="Agregar" />
                         <TextField layoutX="16.0" layoutY="309.0" prefHeight="25.0" prefWidth="170.0" />
                         <Button fx:id="vp" layoutX="17.0" layoutY="210.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="169.0" text="Vsta previa" />
                      </children>
