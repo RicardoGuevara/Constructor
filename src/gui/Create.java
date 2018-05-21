@@ -5,8 +5,7 @@
  */
 package gui;
 
-import static gui.CoreProgramController.addCompInDocView;
-import static gui.CoreProgramController.f;
+
 import htmlConstruction.ComponenType;
 import htmlConstruction.ComponentSubType;
 import htmlConstruction.HtmlComponent;
@@ -42,16 +41,7 @@ public class Create {
     
     @FXML
     protected void paragraph() {
-        HtmlComponent temporal = new HtmlComponent(ComponenType.OUTPUT, ComponentSubType.PARAGRAPH, "Hello World!");
-        HtmlConstruction.components.add(temporal);
-        builder.DocumentConstruction("Testorona");
-        //System.out.println(builder.getLink());
-        CoreProgramController.addCompInDocView(temporal);
-        CoreProgramController.f = new File (builder.getLink());
-        CoreProgramController.we.load(f.toURI().toString());
-        
-        GUILoader.ps.close();
-        
+       
     }
     
     
