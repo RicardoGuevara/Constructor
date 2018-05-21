@@ -31,6 +31,23 @@ public class HtmlConstructor {
     public static void main(String[] args) throws Exception {
         fxMain.main(args);
         //ingresar.setVisible(true);
+        /*
+        try {
+        System.out.println("prueba2");
+        mail.Upload up = new mail.Upload("ftp.alguienmore.com","alguienmore.com","2be548dd514c");
+        up.inUpload("prro.html");
+        //System.out.println("prueba2");
+        } catch (Exception e) {
+        }
+        
+        try {
+        System.out.println("prueba3");
+        mail.Upload up = new mail.Upload("http:\\www.alguienmore.com","alguienmore.com","2be548dd514c");
+        up.inUpload("prro.html");
+        //System.out.println("prueba3");
+        } catch (Exception e) {
+        }
+        */
     }
 
 //REGISTRO Y VERIFICACIÓN_______________________________________________________
