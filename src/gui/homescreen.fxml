@@ -23,7 +23,7 @@
          <children>
             <HBox id="box" layoutX="200.0" prefHeight="76.0" prefWidth="618.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="371.24750317686846" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label id="new_project" accessibleRole="BUTTON" text="NUEVO">
+                  <Label fx:id="new_project" accessibleRole="BUTTON" text="NUEVO" onMouseClicked="#newProject">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>

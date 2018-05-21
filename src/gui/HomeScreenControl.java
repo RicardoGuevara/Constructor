@@ -6,9 +6,12 @@
 
 package gui;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -24,33 +27,20 @@ public class HomeScreenControl{
     
     @FXML
     private Button user_button;
+    
     @FXML
     private Label new_project;
-    @FXML
-    private HBox box;
     
     
     @FXML
     protected void letsGo(ActionEvent event) throws Exception
     {
-    
-        //iLoader = new GUILoader("CoreProgram", "Core Program");
-        
-        System.out.println("entra");
-        
+        //accion de cierre?
     }
     
-    
-    
-    /*
     @FXML
-    protected void helloWorldTest(ActionEvent event) throws IOException, Throwable
+    protected void newProject() throws Exception
     {
-    System.out.println("entra general");
+        iLoader = new GUILoader("CoreProgram", "Core Program");   
     }
-    */
-    
-    
-    
-    
 }

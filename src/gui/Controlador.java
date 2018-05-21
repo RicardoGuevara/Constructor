@@ -65,35 +65,29 @@ public class Controlador {
         
         //System.out.println(((Button)event.getSource()).getText());
         
-        try
+        System.out.println("anything");
+    }
+
+    @FXML
+    protected void ingreso(ActionEvent event)
+            throws Exception
+    {
+        if(HtmlConstructor.log(usuario_field.getText(), passwd_field.getText()))
         {
-        
-            Button selection= (Button)event.getSource();
-        
-            if      (selection.equals(register_button)) 
-            {    
-                HtmlConstructor.registrar(usuario_field.getText(), passwd_field.getText());
-            }
-            else if (selection.equals(login_button))
-            {
-                if(HtmlConstructor.log(usuario_field.getText(), passwd_field.getText()))
-                {
-                    iLoader = new GUILoader("homescreen", "Home Screen");
-                }
-                else
-                {
-                    Alert exito = new Alert(Alert.AlertType.ERROR,"error de inicio de secion");
-                    exito.showAndWait();
-                }
-            }
-        
+            iLoader = new GUILoader("homescreen", "Home Screen");
         }
-        catch(Exception e)
+        else
         {
-            System.out.println("Not a button");
-            e.printStackTrace();
+        Alert exito = new Alert(Alert.AlertType.ERROR,"error de inicio de secion");
+        exito.showAndWait();
         }
     }
 
+    @FXML
+    protected void registro(ActionEvent event)
+    {
+        HtmlConstructor.registrar(usuario_field.getText(), passwd_field.getText());
+    }
+    
     
 }
