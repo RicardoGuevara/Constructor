@@ -21,6 +21,7 @@
             <Button fx:id="register_button" layoutX="180.0" layoutY="403.0" mnemonicParsing="false" onAction="#registro" prefHeight="29.0" prefWidth="91.0" text="Registrarse" />
             <Label id="titulo" layoutX="81.0" layoutY="6.0" text="Bienvenido" />
             <Circle id="imagen" fx:id="circleImage" fill="#35ff00" layoutX="154.0" layoutY="151.0" radius="93.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Button fx:id="salir" layoutX="245.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="60.0" text="SALIR" />
          </children>
          <opaqueInsets>
             <Insets />
