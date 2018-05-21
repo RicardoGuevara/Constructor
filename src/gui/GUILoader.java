@@ -57,10 +57,13 @@ public class GUILoader extends Application {
 
         primaryStage.setTitle(titulo);
         primaryStage.setScene(new Scene(root));
-        primaryStage.show();
+//        primaryStage.show();
         
-        ps= primaryStage;
-
+        HtmlConstructor.antlog = HtmlConstructor.actlog;
+        HtmlConstructor.actlog= primaryStage;
+        HtmlConstructor.actlog.show();
+        HtmlConstructor.antlog.close();
+        
     }
 
     public GUILoader(String fxml, String titulo, boolean change) throws Exception {
@@ -72,7 +75,6 @@ public class GUILoader extends Application {
         if(change)
         {
             HtmlConstructor.antlog = HtmlConstructor.actlog;
-            HtmlConstructor.actlog = ps;
             HtmlConstructor.antlog.close();
         }
         
@@ -82,12 +84,10 @@ public class GUILoader extends Application {
         this.fxml = fxml;
         this.titulo = titulo;
 
+//            HtmlConstructor.antlog = HtmlConstructor.actlog;
+//            HtmlConstructor.antlog.close();
+            
         start(new Stage());
-        
-            HtmlConstructor.antlog = HtmlConstructor.actlog;
-            HtmlConstructor.actlog = ps;
-            HtmlConstructor.antlog.close();
-        
         
     }
     
