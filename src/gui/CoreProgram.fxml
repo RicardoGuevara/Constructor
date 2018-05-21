@@ -136,7 +136,7 @@
          <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="168.0">
                <children>
-                  <Pane layoutX="-2.0" prefHeight="356.0" prefWidth="200.0">
+                  <Pane layoutX="-2.0" layoutY="-41.0" prefHeight="356.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="14.0" layoutY="42.0" text="Texto inicial:" />
                         <Label layoutX="14.0" layoutY="14.0" text="Nuevo componente" />
@@ -145,7 +145,9 @@
                         <Label layoutX="108.0" layoutY="111.0" text="Alto" />
                         <Spinner id="ancho" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="70.0" />
                         <Spinner id="alto" layoutX="100.0" layoutY="142.0" prefHeight="25.0" prefWidth="67.0" />
-                        <Button id="agregar" layoutX="16.0" layoutY="286.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="169.0" text="Agregar" />
+                        <Button id="agregar" layoutX="17.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="169.0" text="Agregar" />
+                        <TextField layoutX="16.0" layoutY="309.0" prefHeight="25.0" prefWidth="170.0" />
+                        <Button fx:id="vp" layoutX="17.0" layoutY="210.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="169.0" text="Vsta previa" />
                      </children>
                   </Pane>
                </children>
