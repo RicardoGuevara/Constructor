@@ -26,7 +26,7 @@ import javafx.scene.web.WebView;
  */
 public class CoreProgramController {
 
-    File f = new File("C:\\Users\\josem\\Documents\\Proyectos\\Testin' grounds\\HTML\\Untitled-1.html");
+    File f = new File("pagina.html");
     boolean destinyPaneActive = false;
 
     HtmlConstruction builder = new HtmlConstruction();

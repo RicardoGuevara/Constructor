@@ -75,6 +75,8 @@ public class Controlador {
         if(HtmlConstructor.log(usuario_field.getText(), passwd_field.getText()))
         {
             iLoader = new GUILoader("homescreen", "Home Screen");
+            HtmlConstructor.user = usuario_field.getText();
+            System.out.println("ingreso de usuario: "+usuario_field.getText());
         }
         else
         {

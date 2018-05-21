@@ -17,6 +17,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import nodos.NodoM;
 import nodos.SubNodo;
@@ -195,14 +196,22 @@ public class HtmlConstructor {
         return retorno;
     }
 
+    
+    public static String user;
+    
 //-----------------Visuales Antiguas------------------
+
     public static boolean vtnOpen = false;
 
     public static UserLog ingresar = new UserLog();
     public static User menu = new User();
     public static ProjectScreen proyecto = new ProjectScreen();
     public static CssMenu css = new CssMenu();
-
+    
+    
 //-----------------Visuales Actuales-------------------
     public static FXMain fxMain = new FXMain();
+    
+    public static Stage antlog,actlog;
+    
 }

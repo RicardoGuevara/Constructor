@@ -5,6 +5,7 @@
  */
 package gui;
 
+import htmlconstructor.HtmlConstructor;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -27,12 +28,14 @@ import javafx.stage.Stage;
 public class HomeFXMain extends Application {
     
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws Exception {
        Parent scene = FXMLLoader.load(getClass().getResource("/gui/homescreen.fxml"));
+        
         
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(new Scene(scene));
         primaryStage.show();
+                
     }
 
     /**

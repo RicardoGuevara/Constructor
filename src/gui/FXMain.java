@@ -5,6 +5,7 @@
  */
 package gui;
 
+import htmlconstructor.HtmlConstructor;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -53,7 +54,10 @@ public class FXMain  extends Application{
         primaryStage.setTitle("WIP Maker");
         primaryStage.setScene(new Scene(root));
        
+        
+        HtmlConstructor.actlog=primaryStage;
         primaryStage.show();
+        
     }
 
     /**

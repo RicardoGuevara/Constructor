@@ -5,6 +5,7 @@
  */
 package gui;
 
+import htmlconstructor.HtmlConstructor;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -55,6 +56,11 @@ public class GUILoader extends Application {
         primaryStage.setTitle(titulo);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        
+        HtmlConstructor.antlog = HtmlConstructor.actlog;
+        HtmlConstructor.actlog = primaryStage;
+        HtmlConstructor.antlog.close();
+        
 
     }
 

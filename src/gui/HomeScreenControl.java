@@ -35,7 +35,7 @@ public class HomeScreenControl{
     @FXML
     protected void letsGo(ActionEvent event) throws Exception
     {
-        //accion de cierre?
+        // how to close?
     }
     
     @FXML
