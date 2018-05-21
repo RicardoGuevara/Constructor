@@ -21,7 +21,7 @@
 
 <BorderPane minHeight="600.0" minWidth="1000.0" prefHeight="740.0" prefWidth="1190.0" stylesheets="@coreprogram.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CoreProgramController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER" >
+      <MenuBar BorderPane.alignment="CENTER">
          <menus>
             <Menu mnemonicParsing="false" text="File">
                <items>
@@ -70,15 +70,21 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
+                                                <Label fx:id="saltoDeLinea" layoutX="10.0" layoutY="64.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="salto de linea" textAlignment="CENTER" />
                                                 <Label fx:id="testLabel1" onMouseClicked="#configureButton" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Boton" textAlignment="CENTER" AnchorPane.bottomAnchor="190.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                 <Label fx:id="testLabel2" layoutX="9.0" layoutY="28.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Parrafo" textAlignment="CENTER" AnchorPane.bottomAnchor="170.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="addTextBox" layoutX="10.0" layoutY="91.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Text box" textAlignment="CENTER" />
                                              </children>
                                           </AnchorPane>
                                        </content>
                                     </TitledPane>
                                     <TitledPane text="Misceláneo">
                                        <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="202.0" />
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="202.0">
+                                             <children>
+                                                <Label fx:id="addImage" layoutX="10.0" layoutY="14.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Imagen" textAlignment="CENTER" />
+                                                <Label fx:id="addCanvas" layoutX="10.0" layoutY="41.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Canvas" textAlignment="CENTER" />
+                                             </children></AnchorPane>
                                        </content>
                                     </TitledPane>
                                  </panes>
