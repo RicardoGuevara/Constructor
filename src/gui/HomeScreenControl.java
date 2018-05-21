@@ -6,6 +6,7 @@
 
 package gui;
 
+import htmlconstructor.HtmlConstructor;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -33,9 +34,11 @@ public class HomeScreenControl{
     
     
     @FXML
-    protected void letsGo(ActionEvent event) throws Exception
+    protected void closeSec(ActionEvent event) throws Exception
     {
-        // how to close?
+        iLoader = new GUILoader("Login", "log in");
+        HtmlConstructor.user = new String();
+        System.out.println("cierre de seción");
     }
     
     @FXML
@@ -43,4 +46,6 @@ public class HomeScreenControl{
     {
         iLoader = new GUILoader("CoreProgram", "Core Program");   
     }
+    
+    
 }

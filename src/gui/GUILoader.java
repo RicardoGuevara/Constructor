@@ -33,6 +33,8 @@ public class GUILoader extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 
+    public static Stage ps=HtmlConstructor.actlog;
+    
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.initStyle(StageStyle.TRANSPARENT);
@@ -57,19 +59,36 @@ public class GUILoader extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         
-        HtmlConstructor.antlog = HtmlConstructor.actlog;
-        HtmlConstructor.actlog = primaryStage;
-        HtmlConstructor.antlog.close();
-        
+        ps= primaryStage;
 
     }
 
+    public GUILoader(String fxml, String titulo, boolean change) throws Exception {
+        this.fxml = fxml;
+        this.titulo = titulo;
+
+        start(new Stage());
+        
+        if(change)
+        {
+            HtmlConstructor.antlog = HtmlConstructor.actlog;
+            HtmlConstructor.actlog = ps;
+            HtmlConstructor.antlog.close();
+        }
+        
+    }
+    
     public GUILoader(String fxml, String titulo) throws Exception {
         this.fxml = fxml;
         this.titulo = titulo;
 
         start(new Stage());
-
+        
+            HtmlConstructor.antlog = HtmlConstructor.actlog;
+            HtmlConstructor.actlog = ps;
+            HtmlConstructor.antlog.close();
+        
+        
     }
-
+    
 }

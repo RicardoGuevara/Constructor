@@ -9,6 +9,7 @@ import htmlConstruction.ComponenType;
 import htmlConstruction.ComponentSubType;
 import htmlConstruction.HtmlComponent;
 import htmlConstruction.HtmlConstruction;
+import htmlconstructor.HtmlConstructor;
 
 import java.io.File;
 import javafx.event.ActionEvent;
@@ -41,6 +42,8 @@ public class CoreProgramController {
     private VBox j;
     
 
+    GUILoader iLoader;
+    
     @FXML
     public void initialize() {
 
@@ -98,4 +101,10 @@ public class CoreProgramController {
         destinyPane.setVisible(true);
     }
 
+    @FXML
+    protected void close(ActionEvent event) throws Exception
+    {
+        iLoader = new GUILoader("homescreen", "Home Screen");    
+    }
+    
 }
