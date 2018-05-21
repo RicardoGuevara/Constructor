@@ -91,5 +91,11 @@ public class Controlador {
         HtmlConstructor.registrar(usuario_field.getText(), passwd_field.getText());
     }
     
+    @FXML
+    protected void cerrar(ActionEvent event)
+    {
+        System.exit(0);
+    }
+    
     
 }

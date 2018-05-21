@@ -66,19 +66,6 @@ public class GUILoader extends Application {
         
     }
 
-    public GUILoader(String fxml, String titulo, boolean change) throws Exception {
-        this.fxml = fxml;
-        this.titulo = titulo;
-
-        start(new Stage());
-        
-        if(change)
-        {
-            HtmlConstructor.antlog = HtmlConstructor.actlog;
-            HtmlConstructor.antlog.close();
-        }
-        
-    }
     
     public GUILoader(String fxml, String titulo) throws Exception {
         this.fxml = fxml;

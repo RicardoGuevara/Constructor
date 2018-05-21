@@ -20,6 +20,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import htmlConstruction.ComponentSubType.*;
+import htmlConstruction.ComponenType.*;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -31,7 +35,8 @@ public class CoreProgramController {
     boolean destinyPaneActive = false;
 
     HtmlConstruction builder = new HtmlConstruction();
-
+    ComponentSubType type = ComponentSubType.PARAGRAPH;
+    
     @FXML
     private WebView wb;
     private WebEngine we;
@@ -40,6 +45,11 @@ public class CoreProgramController {
     private Pane destinyPane;
     @FXML
     private VBox j;
+    @FXML
+    private TextField initial_val;
+    @FXML
+    private Spinner ancho,
+                    alto;
     
 
     GUILoader iLoader;
@@ -49,6 +59,11 @@ public class CoreProgramController {
 
         we = wb.getEngine();
         we.load(f.toURI().toString());
+        
+        ancho.setDisable(true);
+        alto.setDisable(true);
+        
+        
     }
 
     @FXML
@@ -60,9 +75,38 @@ public class CoreProgramController {
 
     }
 
-    @FXML
+    @FXML 
+    protected void configureParagraph()
+    {
+        type = ComponentSubType.PARAGRAPH;
+        ancho.setDisable(true);
+        alto.setDisable(true);
+    }
+    
+    
+    @FXML 
+    protected void configureButton()
+    {
+        type = ComponentSubType.BUTTON;
+        ancho.setDisable(false);
+        alto.setDisable(false);
+    }
+    
+    @FXML 
+    protected void addComp(ActionEvent event)
+    {
+        switch(type)
+        {
+            case PARAGRAPH:
+                addParagraph2Document();
+                break;
+            case BUTTON:
+                addButton2Document();
+        }
+    }
+    
     protected void addParagraph2Document() {
-        HtmlComponent temporal = new HtmlComponent(ComponenType.OUTPUT, ComponentSubType.PARAGRAPH, "Hello World!");
+        HtmlComponent temporal = new HtmlComponent(ComponenType.OUTPUT, ComponentSubType.PARAGRAPH, initial_val.getText());
         HtmlConstruction.components.add(temporal);
         builder.DocumentConstruction("Testorona");
         //System.out.println(builder.getLink());
@@ -71,12 +115,11 @@ public class CoreProgramController {
         we.load(f.toURI().toString());
     }
     
-    @FXML
     protected void addButton2Document(){
         HtmlComponent temporal = new HtmlComponent(
                             ComponenType.INPUT, 
                             ComponentSubType.BUTTON, 
-                            "Boton de prueba", 
+                            initial_val.getText(), 
                             300, 
                             200 );
         HtmlConstruction.components.add(temporal);

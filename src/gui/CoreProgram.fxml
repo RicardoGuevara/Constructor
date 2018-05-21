@@ -61,7 +61,7 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <Label fx:id="testLabel" layoutX="19.9" layoutY="19.9" onMouseClicked="#addParagraph2Document" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Parrafo" textAlignment="CENTER" AnchorPane.bottomAnchor="190.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                <Label fx:id="testLabel" layoutX="19.9" layoutY="19.9" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Parrafo" textAlignment="CENTER" AnchorPane.bottomAnchor="190.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                              </children>
                                           </AnchorPane>
                                        </content>
@@ -70,8 +70,8 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <Label fx:id="testLabel1" onMouseClicked="#addButton2Document" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Boton" textAlignment="CENTER" AnchorPane.bottomAnchor="190.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                                <Label fx:id="testLabel2" layoutX="9.0" layoutY="28.0" onMouseClicked="#addParagraph2Document" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Parrafo" textAlignment="CENTER" AnchorPane.bottomAnchor="170.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="testLabel1" onMouseClicked="#configureButton" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Boton" textAlignment="CENTER" AnchorPane.bottomAnchor="190.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                <Label fx:id="testLabel2" layoutX="9.0" layoutY="28.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Parrafo" textAlignment="CENTER" AnchorPane.bottomAnchor="170.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                        </content>
@@ -127,7 +127,7 @@
    <center>
       <AnchorPane id="webBackgroundTest" prefHeight="200.0" prefWidth="427.0" BorderPane.alignment="CENTER">
          <children>
-            <WebView fx:id="wb" fontSmoothingType="GRAY" layoutY="1.0" prefHeight="710.0" prefWidth="834.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <WebView fx:id="wb" layoutY="1.0" prefHeight="710.0" prefWidth="834.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
    </center>
@@ -140,12 +140,12 @@
                      <children>
                         <Label layoutX="14.0" layoutY="42.0" text="Texto inicial:" />
                         <Label layoutX="14.0" layoutY="14.0" text="Nuevo componente" />
-                        <TextField layoutX="14.0" layoutY="59.0" prefHeight="25.0" prefWidth="166.0" />
+                        <TextField fx:id="initial_val" layoutX="14.0" layoutY="59.0" prefHeight="25.0" prefWidth="166.0" />
                         <Label layoutX="14.0" layoutY="111.0" text="Ancho" />
                         <Label layoutX="108.0" layoutY="111.0" text="Alto" />
-                        <Spinner id="ancho" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="70.0" />
-                        <Spinner id="alto" layoutX="100.0" layoutY="142.0" prefHeight="25.0" prefWidth="67.0" />
-                        <Button id="agregar" layoutX="17.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="169.0" text="Agregar" />
+                        <Spinner fx:id="ancho" id="ancho" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="70.0" />
+                        <Spinner fx:id="alto" id="alto" layoutX="100.0" layoutY="142.0" prefHeight="25.0" prefWidth="67.0" />
+                        <Button id="agregar" onAction="#addComp" layoutX="17.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="169.0" text="Agregar" />
                         <TextField layoutX="16.0" layoutY="309.0" prefHeight="25.0" prefWidth="170.0" />
                         <Button fx:id="vp" layoutX="17.0" layoutY="210.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="169.0" text="Vsta previa" />
                      </children>
