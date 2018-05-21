@@ -33,7 +33,10 @@ public class CoreProgramController {
 
     File f = new File("pagina.html");
     boolean destinyPaneActive = false;
-
+    private double xOffset = 0;
+    private double yOffset = 0;
+    
+    
     HtmlConstruction builder = new HtmlConstruction();
     ComponentSubType type = ComponentSubType.PARAGRAPH;
     

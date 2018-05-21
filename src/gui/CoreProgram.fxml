@@ -21,7 +21,7 @@
 
 <BorderPane minHeight="600.0" minWidth="1000.0" prefHeight="740.0" prefWidth="1190.0" stylesheets="@coreprogram.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CoreProgramController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar BorderPane.alignment="CENTER" >
          <menus>
             <Menu mnemonicParsing="false" text="File">
                <items>
