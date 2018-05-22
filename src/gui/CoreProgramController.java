@@ -34,6 +34,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -255,7 +256,12 @@ public class CoreProgramController {
         try {
             upper = new Upload("ftp.alguienmore.com", "alguienmore.com", "2be548dd514c");
             upper.inUpload(builder.getLink());
-        } catch (Exception e) {
+            Alert a = new Alert(Alert.AlertType.CONFIRMATION,"Proyecto subido con éxito");
+            a.showAndWait();
+        } catch (Exception e) 
+        {
+            Alert a = new Alert(Alert.AlertType.CONFIRMATION,"No fué posible subir el proyecto");
+            a.showAndWait();
         }
 
     }
