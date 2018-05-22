@@ -162,7 +162,7 @@ public class CoreProgramController {
     }
     @FXML
     protected void addParagraph2Document() {
-        HtmlComponent temporal = new HtmlComponent(ComponenType.OUTPUT, type, "I Told Ya So");
+        HtmlComponent temporal = new HtmlComponent(ComponenType.OUTPUT, type, initial_val.getText());
         HtmlConstruction.components.add(temporal);
         builder.DocumentConstruction("Testorona");
         //System.out.println(builder.getLink());
