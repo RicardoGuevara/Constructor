@@ -197,6 +197,27 @@ public class HtmlConstruction implements Runnable{
         documento.close();
     }
     
+    public static int subsId(String name)
+    {
+        String retorno="";
+        int i=0;
+        
+        while(name.startsWith(" "))
+        {
+            name=name.substring(1);
+        }
+        
+        while(!name.substring(i,i+1).equals(" "))
+        {
+            retorno=retorno+name.substring(i,i+1);
+            i++;
+        }
+        
+        System.out.println(retorno+"|");
+        
+        return Integer.parseInt(retorno);
+    }
+    
     public static HtmlComponent searchId(int idComplement)
     {
         NodoM p = components;

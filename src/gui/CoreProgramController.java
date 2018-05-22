@@ -43,7 +43,7 @@ import javafx.stage.StageStyle;
  */
 public class CoreProgramController {
 
-    File f = new File("pagina.html");
+    static File f = new File("pagina.html");
     boolean destinyPaneActive = false;
     private double xOffset = 0;
     private double yOffset = 0;
@@ -56,7 +56,8 @@ public class CoreProgramController {
     private WebView wb;
     private WebEngine we;
     @FXML
-    private Label testLabel, selectedLabel;
+    private Label testLabel;
+    public static Label selectedLabel;
     private Pane destinyPane;
     @FXML
     private VBox j;
