@@ -31,16 +31,16 @@ public class HtmlConstructor {
     public static void main(String[] args) throws Exception {
         fxMain.main(args);
         //ingresar.setVisible(true);
-        /*
-        try {
-        System.out.println("prueba2");
-        mail.Upload up = new mail.Upload("ftp.alguienmore.com","alguienmore","2be548dd514c");
-        up.inUpload("prro.html");
-        //System.out.println("prueba2");
-        } catch (Exception e)
-        {
-        }
-        */
+        
+//        try {
+//        System.out.println("prueba2");
+//        mail.Upload up = new mail.Upload("ftp.alguienmore.com","alguienmore.com","2be548dd514c");
+//        up.inUpload("index.html");
+//        //System.out.println("prueba2");
+//        } catch (Exception e)
+//        {
+//        }
+        
         
         
     }

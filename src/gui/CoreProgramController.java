@@ -5,6 +5,8 @@
  */
 package gui;
 
+import mail.Upload;
+
 import htmlConstruction.ComponenType;
 import htmlConstruction.ComponentSubType;
 import htmlConstruction.HtmlComponent;
@@ -32,15 +34,18 @@ import javafx.scene.control.TextField;
  */
 public class CoreProgramController {
 
-    File f = new File("pagina.html");
+    File f = new File("C:\\Users\\josem\\Documents\\Proyectos\\Testin' grounds\\HTML\\Untitled-1.html");
     boolean destinyPaneActive = false;
     private double xOffset = 0;
     private double yOffset = 0;
-    
-    
+
+    Upload upper;
+
     HtmlConstruction builder = new HtmlConstruction();
     ComponentSubType type = ComponentSubType.PARAGRAPH;
-    
+
+    GUILoader iLoader;
+
     @FXML
     private WebView wb;
     private WebEngine we;
@@ -53,21 +58,17 @@ public class CoreProgramController {
     private TextField initial_val;
     @FXML
     private Spinner ancho,
-                    alto;
-    
+            alto;
 
-    GUILoader iLoader;
-    
     @FXML
     public void initialize() {
 
         we = wb.getEngine();
         we.load(f.toURI().toString());
-        
+
         ancho.setDisable(true);
         alto.setDisable(true);
-        
-        
+
     }
 
     @FXML
@@ -79,43 +80,37 @@ public class CoreProgramController {
 
     }
 
-    @FXML 
-    protected void configureLB()
-    {
+    @FXML
+    protected void configureLB() {
         type = ComponentSubType.LINEBREAK;
         ancho.setDisable(true);
         alto.setDisable(true);
     }
-    
-    @FXML 
-    protected void configureTB()
-    {
+
+    @FXML
+    protected void configureTB() {
         type = ComponentSubType.TEXTBOX;
         ancho.setDisable(false);
         alto.setDisable(false);
     }
-    
-    @FXML 
-    protected void configureParagraph()
-    {
+
+    @FXML
+    protected void configureParagraph() {
         type = ComponentSubType.PARAGRAPH;
         ancho.setDisable(true);
         alto.setDisable(true);
     }
-    
-    @FXML 
-    protected void configureButton()
-    {
+
+    @FXML
+    protected void configureButton() {
         type = ComponentSubType.BUTTON;
         ancho.setDisable(false);
         alto.setDisable(false);
     }
-    
-    @FXML 
-    protected void addComp(ActionEvent event)
-    {
-        switch(type)
-        {
+
+    @FXML
+    protected void addComp(ActionEvent event) {
+        switch (type) {
             case PARAGRAPH:
                 addParagraph2Document();
                 break;
@@ -131,53 +126,69 @@ public class CoreProgramController {
                 break;
         }
     }
-    
+    @FXML
     protected void addParagraph2Document() {
-        HtmlComponent temporal = new HtmlComponent(ComponenType.OUTPUT, ComponentSubType.PARAGRAPH, initial_val.getText());
+        HtmlComponent temporal = new HtmlComponent(ComponenType.OUTPUT, type, "I Told Ya So");
         HtmlConstruction.components.add(temporal);
         builder.DocumentConstruction("Testorona");
         //System.out.println(builder.getLink());
         addCompInDocView(temporal);
-        f = new File (builder.getLink());
+        f = new File(builder.getLink());
         we.load(f.toURI().toString());
     }
-    
-    protected void addButton2Document(){
+
+    protected void addButton2Document() {
         HtmlComponent temporal = new HtmlComponent(
-                            ComponenType.INPUT, 
-                            type, 
-                            initial_val.getText(), 
-                            200, 
-                            500 );
+                ComponenType.INPUT,
+                type,
+                initial_val.getText(),
+                200,
+                500);
         HtmlConstruction.components.add(temporal);
         builder.DocumentConstruction("Testorona");
         //System.out.println(builder.getLink());
         addCompInDocView(temporal);
-        f = new File (builder.getLink());
+        f = new File(builder.getLink());
         we.load(f.toURI().toString());
     }
 
     //@FXML
     protected void addCompInDocView(HtmlComponent base) {
-        System.out.println("Doc List: "+" "+base.getLabelNum()+" "+base.getType());
-        Label labelnew = new Label(" "+base.getLabelNum()+" "+base.getType());
+        System.out.println("Doc List: " + " " + base.getLabelNum() + " " + base.getType());
+        Label labelnew = new Label(" " + base.getLabelNum() + " " + base.getType());
         j.getChildren().add(labelnew);
     }
 
-    int x,y;
-    
+    int x, y;
+
     @FXML
-    protected void options()
-    {
+    protected void options() {
         System.out.println("SI FUNCIONA MK");
     }
-    
-    private void detect()
-    {
-        
+
+    private void detect() {
+
     }
-    
+
     @FXML
+    protected void uploadTest(ActionEvent event) {
+
+        try {
+            upper = new Upload("ftp.alguienmore.com", "alguienmore.com", "2be548dd514c");
+            upper.inUpload(builder.getLink());
+        } catch (Exception e) {
+        }
+
+    }
+    @FXML
+    protected void  checkNames(ActionEvent event){
+        System.out.println("Link: "+builder.getLink());
+        System.out.println("Title: " +builder.getTitle());
+        System.out.println("DocName: "+builder.getDocName());
+           
+    }
+
+    @FXML //Prueba de panel al darle click derecho, nunca lo terminé
     protected void openDPane(ActionEvent event) {
 
         //destinyPane.set;
@@ -185,9 +196,8 @@ public class CoreProgramController {
     }
 
     @FXML
-    protected void close(ActionEvent event) throws Exception
-    {
-        iLoader = new GUILoader("homescreen", "Home Screen");    
+    protected void close(ActionEvent event) throws Exception {
+        iLoader = new GUILoader("homescreen", "Home Screen");
     }
-    
+
 }
