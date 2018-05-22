@@ -79,7 +79,7 @@ public class OptionsController {
     {
         primaryStage = new Stage();
         primaryStage.initStyle(StageStyle.TRANSPARENT);
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/Informacion.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/Information.fxml"));
 
         root.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {
             @Override

@@ -13,5 +13,16 @@ import javafx.fxml.FXML;
  */
 public class InfrmationController {
     @FXML
-    public void initialize() {}
+    public void initialize() 
+    {
+    
+    }
+    
+    @FXML
+    protected void close()
+    {
+        OptionsController.primaryStage.close();
+    }
+    
+    
 }

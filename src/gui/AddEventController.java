@@ -14,5 +14,22 @@ import javafx.fxml.FXML;
 public class AddEventController {
     
     @FXML
-    public void initialize() {}
+    public void initialize() 
+    {
+        
+    }
+    
+    @FXML
+    protected void close()
+    {
+        OptionsController.primaryStage.close();
+    }
+    
+    @FXML
+    protected void addEvent()
+    {
+    
+        close();
+    }
+    
 }
