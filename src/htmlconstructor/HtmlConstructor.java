@@ -19,6 +19,7 @@ import java.io.IOException;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import mail.ZipCompress;
 import nodos.NodoM;
 import nodos.SubNodo;
 import visuals.*;
@@ -40,8 +41,6 @@ public class HtmlConstructor {
 //        } catch (Exception e)
 //        {
 //        }
-        
-        
         
     }
 

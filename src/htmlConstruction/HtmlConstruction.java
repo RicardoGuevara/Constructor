@@ -9,8 +9,10 @@ package htmlConstruction;
  *
  * @author Bloque G
  */
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileWriter;
 import javax.swing.JOptionPane;
@@ -109,6 +111,8 @@ public class HtmlConstruction implements Runnable {
         FileWriter documento = new FileWriter(this.docName, true);
         BufferedWriter escribir = new BufferedWriter(documento);
 
+        BufferedReader leer = new BufferedReader(new FileReader("complementoBt.txt"));
+        
         escribir.write("<head>");
         escribir.newLine();
 
@@ -117,7 +121,17 @@ public class HtmlConstruction implements Runnable {
 
         escribir.write("    <title>" + this.title + "</title>");
         escribir.newLine();
-
+        
+        escribir.write(leer.readLine());
+        escribir.newLine();
+        escribir.write(leer.readLine());
+        escribir.newLine();
+        escribir.write(leer.readLine());
+        escribir.newLine();
+        escribir.write(leer.readLine());
+        escribir.newLine();
+        
+        leer.close();
         escribir.close();
         documento.close();
     }

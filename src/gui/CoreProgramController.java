@@ -46,7 +46,7 @@ import javafx.stage.StageStyle;
  */
 public class CoreProgramController {
 
-    File f = new File("pagina.html");
+    public static File f = new File("pagina.html");
     boolean destinyPaneActive = false;
     private double xOffset = 0;
     private double yOffset = 0;
