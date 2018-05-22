@@ -5,9 +5,11 @@
  */
 package gui;
 
+import htmlconstructor.HtmlConstructor;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -28,9 +30,11 @@ public class Controlador {
 
     @FXML
     private TextField usuario_field;
-    //private PasswordField passwd_field;
-    private Button login_button;
-    //private Button register_button;
+    @FXML
+    private PasswordField passwd_field;
+    @FXML
+    private Button  login_button,
+                    register_button;
     @FXML
     private Circle circleImage;
     private Pane rootPane;
@@ -47,11 +51,51 @@ public class Controlador {
 
     @FXML
     protected void helloWorldTest(ActionEvent event) throws IOException, Throwable {
+        
+        /*
         System.out.println("HOELELEL");
         usuario_field.setText("HOLI");
-
+        
         iLoader = new GUILoader("homescreen", "Home Screen");
-
-//        iLoader.main(new String[100],"homescreen", "SAVEMEPLS");
+        
+        //        iLoader.main(new String[100],"homescreen", "SAVEMEPLS");
+        */
+    
+    // pruebas de rick v:    
+        
+        //System.out.println(((Button)event.getSource()).getText());
+        
+        System.out.println("anything");
     }
+
+    @FXML
+    protected void ingreso(ActionEvent event)
+            throws Exception
+    {
+        if(HtmlConstructor.log(usuario_field.getText(), passwd_field.getText()))
+        {
+            iLoader = new GUILoader("homescreen", "Home Screen");
+            HtmlConstructor.user = usuario_field.getText();
+            System.out.println("ingreso de usuario: "+usuario_field.getText());
+        }
+        else
+        {
+        Alert exito = new Alert(Alert.AlertType.ERROR,"error de inicio de secion");
+        exito.showAndWait();
+        }
+    }
+
+    @FXML
+    protected void registro(ActionEvent event)
+    {
+        HtmlConstructor.registrar(usuario_field.getText(), passwd_field.getText());
+    }
+    
+    @FXML
+    protected void cerrar(ActionEvent event)
+    {
+        System.exit(0);
+    }
+    
+    
 }

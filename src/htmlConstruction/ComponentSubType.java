@@ -14,6 +14,7 @@ public enum ComponentSubType
     //OUTPUTS___________________________________________________________________
         LABEL,
         PARAGRAPH,
+        LINEBREAK,
     //INPUTS____________________________________________________________________
         BUTTON,
         TEXTBOX,

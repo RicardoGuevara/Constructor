@@ -16,6 +16,8 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import nodos.NodoM;
 import nodos.SubNodo;
@@ -29,8 +31,82 @@ public class HtmlConstructor {
     public static void main(String[] args) throws Exception {
         fxMain.main(args);
         //ingresar.setVisible(true);
+        
+//        try {
+//        System.out.println("prueba2");
+//        mail.Upload up = new mail.Upload("ftp.alguienmore.com","alguienmore.com","2be548dd514c");
+//        up.inUpload("index.html");
+//        //System.out.println("prueba2");
+//        } catch (Exception e)
+//        {
+//        }
+        
+        
+        
     }
 
+//REGISTRO Y VERIFICACIÓN_______________________________________________________
+
+    public static void registrar(String name, String pass)
+    {
+        System.out.println("entra "+name+" "+pass);
+        try
+        {
+            
+            BufferedWriter agregar = new BufferedWriter(new FileWriter("users.txt",true));
+            
+                agregar.write(name+";"+pass);
+                agregar.newLine();
+            
+            agregar.close();
+            //JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente");
+            
+            Alert exito = new Alert(Alert.AlertType.CONFIRMATION,"registro exitoso");
+            exito.showAndWait();
+        }
+        catch(IOException e)
+        {
+            //JOptionPane.showMessageDialog(null, "error al registrar el usuario");
+            
+            Alert exito = new Alert(Alert.AlertType.CONFIRMATION,"error de registro");
+            exito.showAndWait();
+        }
+        System.out.println("sale");
+    }
+    
+    public static boolean log(String name,String pass)
+    {
+        try
+        {
+            BufferedReader leer = new BufferedReader(new FileReader("users.txt"));
+                
+                String linea = leer.readLine();
+                
+                while(linea!=null && !linea.isEmpty())
+                {
+                    if (linea.equals(name+";"+pass)) 
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        //System.out.println("sino");
+                        linea=leer.readLine();
+                    }
+                    
+                }
+                
+            leer.close();
+        }
+        catch(IOException e)
+        {
+            Alert exito = new Alert(Alert.AlertType.ERROR,"error de inicio de secion");
+            exito.showAndWait();
+        }
+        return false;
+    }
+    
+    
 //ARCHIVOS .HG__________________________________________________________________
     public static void saveHg()
             throws IOException {
@@ -132,14 +208,22 @@ public class HtmlConstructor {
         return retorno;
     }
 
+    
+    public static String user;
+    
 //-----------------Visuales Antiguas------------------
+
     public static boolean vtnOpen = false;
 
     public static UserLog ingresar = new UserLog();
     public static User menu = new User();
     public static ProjectScreen proyecto = new ProjectScreen();
     public static CssMenu css = new CssMenu();
-
+    
+    
 //-----------------Visuales Actuales-------------------
     public static FXMain fxMain = new FXMain();
+    
+    public static Stage antlog,actlog;
+    
 }

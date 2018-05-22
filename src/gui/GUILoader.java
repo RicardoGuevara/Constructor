@@ -5,6 +5,7 @@
  */
 package gui;
 
+import htmlconstructor.HtmlConstructor;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -32,6 +33,7 @@ public class GUILoader extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 
+    
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.initStyle(StageStyle.TRANSPARENT);
@@ -54,16 +56,25 @@ public class GUILoader extends Application {
 
         primaryStage.setTitle(titulo);
         primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-
+//        primaryStage.show();
+        
+        HtmlConstructor.antlog = HtmlConstructor.actlog;
+        HtmlConstructor.actlog= primaryStage;
+        HtmlConstructor.actlog.show();
+        HtmlConstructor.antlog.close();
+        
     }
 
+    
     public GUILoader(String fxml, String titulo) throws Exception {
         this.fxml = fxml;
         this.titulo = titulo;
 
+//            HtmlConstructor.antlog = HtmlConstructor.actlog;
+//            HtmlConstructor.antlog.close();
+            
         start(new Stage());
-
+        
     }
-
+    
 }
