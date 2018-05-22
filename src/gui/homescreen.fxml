@@ -14,29 +14,29 @@
       <AnchorPane id="leftAnchor" minWidth="70.0" prefHeight="757.0" prefWidth="201.0" style="-fx-background-color: azure;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="14.0" layoutY="14.0" prefHeight="19.0" prefWidth="109.0" text="Proyectos recientes" />
-            <ToggleButton layoutX="147.0" layoutY="317.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="54.0" text="ToggleButton" />
+            <ToggleButton layoutX="142.0" layoutY="620.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="45.0" text="&gt;" />
          </children>
       </AnchorPane>
    </left>
    <top>
       <AnchorPane id="topAnchor" prefHeight="76.0" prefWidth="1190.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox id="box" layoutX="200.0" prefHeight="76.0" prefWidth="618.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="371.24750317686846" AnchorPane.topAnchor="0.0">
+            <HBox id="box" layoutX="200.0" layoutY="25.0" prefHeight="36.0" prefWidth="568.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="423.0" AnchorPane.topAnchor="25.0">
                <children>
-                  <Label fx:id="new_project" accessibleRole="BUTTON" text="NUEVO" onMouseClicked="#newProject">
+                  <Label fx:id="new_project" accessibleRole="BUTTON" onMouseClicked="#newProject" prefHeight="37.0" prefWidth="83.0" text="NUEVO" textFill="#dbdbdb">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </Label>
-                  <Label layoutX="10.0" layoutY="10.0" text="CARGAR" />
+                  <Label layoutX="10.0" layoutY="10.0" text="CARGAR" textFill="#dddddd" />
                </children>
             </HBox>
             <ImageView fitHeight="76.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.03960108843506305" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="990.0197570340088" AnchorPane.topAnchor="0.0" />
-            <Button fx:id="user_button" layoutX="1054.0" layoutY="23.0" mnemonicParsing="false" onAction="#closeSec" prefHeight="29.0" prefWidth="99.0" text="cerrar sesión" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="1054.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="23.0" />
+            <Button fx:id="user_button" layoutX="1077.0" layoutY="23.0" mnemonicParsing="false" onAction="#closeSec" prefHeight="29.0" prefWidth="99.0" text="cerrar sesión" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="1077.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="23.0" />
          </children>
       </AnchorPane>
    </top>
-   <center>
+   <right>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </center>
+   </right>
 </BorderPane>
