@@ -5,6 +5,7 @@
  */
 package gui;
 
+import static gui.OptionsController.primaryStage;
 import htmlConstruction.ComponenType;
 import htmlConstruction.ComponentSubType;
 import htmlConstruction.HtmlComponent;
@@ -26,9 +27,15 @@ import java.awt.Event;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -59,7 +66,8 @@ public class CoreProgramController {
     private Spinner ancho,
                     alto;
     
-
+    
+    
     GUILoader iLoader;
     
     @FXML
@@ -199,13 +207,39 @@ public class CoreProgramController {
         j.getChildren().add(labelnew);
     }
 
-    int x,y;
+    static Stage primaryStage;
     
     @FXML
-    public void options()
+    public void options() throws IOException
     {
-        //Point locacion = MouseInfo.getPointerInfo().getLocation();
-        System.out.println(selectedLabel.getText());
+        Point locacion = MouseInfo.getPointerInfo().getLocation();
+        //System.out.println(selectedLabel.getText());
+        
+        OptionsController.x = locacion.x;
+        OptionsController.y = locacion.y;
+        
+        primaryStage = new Stage();
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/Options.fxml"));
+
+        root.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {
+            @Override
+            public void handle(javafx.scene.input.MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+        root.setOnMouseDragged(new EventHandler<javafx.scene.input.MouseEvent>() {
+            @Override
+            public void handle(javafx.scene.input.MouseEvent event) {
+                primaryStage.setX(event.getScreenX() - xOffset);
+                primaryStage.setY(event.getScreenY() - yOffset);
+            }
+        });
+
+        primaryStage.setTitle("Opciones");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
         
         
     }

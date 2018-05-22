@@ -33,7 +33,6 @@ public class GUILoader extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 
-    public static Stage ps=HtmlConstructor.actlog;
     
     @Override
     public void start(Stage primaryStage) throws Exception {
