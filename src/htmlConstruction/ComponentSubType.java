@@ -19,5 +19,6 @@ public enum ComponentSubType
         BUTTON,
         TEXTBOX,
     //VISUAL____________________________________________________________________
-        CANVAS;
+        CANVAS,
+        IMG;
 }

@@ -45,14 +45,21 @@ public class HtmlComponent {
                 retorno= ("        <p>"+this.initialValue+"</p>");
                 break;
             case CANVAS:
-                retorno= ("        <canvas "+" width='"+this.width+"' height='"+this.heigth+"' id='"+this.elementId+"' />");
-                break;    
+                retorno= ("        <canvas "+" width=\""+this.width+"\" height=\""+this.heigth+"\" id='"+this.elementId+"' />");
+                break;
+            case IMG:
+                retorno = ("<img src=\""+this.initialValue+"\" width=\""+this.width+"\" height=\""+this.heigth+"\" />");
+                break;
+            case LINEBREAK:
+                retorno = ("<br>");
+                break;
             default:    
                 retorno=    "           <input type="+obtainType()+
                             " value='"+this.initialValue+
                             "' id='"+this.elementId+
-                            "' width='"+this.width+
-                            "' height='"+this.heigth+"'"+" / >";
+                            "' width=\""+this.width+
+                            "\" height=\""+this.heigth+
+                            "\""+" / >";
                 break;
         }
 

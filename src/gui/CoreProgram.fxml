@@ -83,8 +83,8 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="202.0">
                                              <children>
-                                                <Label fx:id="addImage" layoutX="10.0" layoutY="14.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Imagen" textAlignment="CENTER" />
-                                                <Label fx:id="addCanvas" layoutX="10.0" layoutY="41.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Canvas" textAlignment="CENTER" />
+                                                <Label fx:id="addImage" layoutX="10.0" layoutY="14.0" onMouseClicked="#configureImg" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Imagen" textAlignment="CENTER" />
+                                                <Label fx:id="addCanvas" layoutX="10.0" layoutY="41.0" onMouseClicked="#configureCanvas" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Canvas" textAlignment="CENTER" />
                                              </children></AnchorPane>
                                        </content>
                                     </TitledPane>
@@ -145,7 +145,7 @@
                <children>
                   <Pane layoutX="-2.0" layoutY="-41.0" prefHeight="356.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="14.0" layoutY="42.0" text="Texto inicial:" />
+                        <Label fx:id="titulo" layoutX="14.0" layoutY="42.0" text="Texto inicial:" />
                         <Label layoutX="14.0" layoutY="14.0" text="Nuevo componente" />
                         <TextField fx:id="initial_val" layoutX="14.0" layoutY="59.0" prefHeight="25.0" prefWidth="166.0" />
                         <Label layoutX="14.0" layoutY="111.0" text="Ancho" />

@@ -62,7 +62,7 @@ public class CoreProgramController {
     private WebView wb;
     private WebEngine we;
     @FXML
-    private Label testLabel;
+    private Label testLabel,titulo;
     public static Label selectedLabel;
     private Pane destinyPane;
     @FXML
@@ -116,6 +116,8 @@ public class CoreProgramController {
 
     @FXML
     protected void configureLB() {
+        titulo.setText("Texto inicial:");
+        initial_val.setDisable(true);        
         type = ComponentSubType.LINEBREAK;
         ancho.setDisable(true);
         alto.setDisable(true);
@@ -123,6 +125,8 @@ public class CoreProgramController {
 
     @FXML
     protected void configureTB() {
+        titulo.setText("Texto inicial:");
+        initial_val.setDisable(false);
         type = ComponentSubType.TEXTBOX;
         ancho.setDisable(false);
         alto.setDisable(false);
@@ -130,6 +134,8 @@ public class CoreProgramController {
 
     @FXML
     protected void configureParagraph() {
+        titulo.setText("Texto inicial:");
+        initial_val.setDisable(false);
         type = ComponentSubType.PARAGRAPH;
         ancho.setDisable(true);
         alto.setDisable(true);
@@ -137,11 +143,34 @@ public class CoreProgramController {
 
     @FXML
     protected void configureButton() {
+        titulo.setText("Texto inicial:");
+        initial_val.setDisable(false);
         type = ComponentSubType.BUTTON;
         ancho.setDisable(false);
         alto.setDisable(false);
     }
 
+    
+    @FXML
+    protected void configureImg() {
+        titulo.setText("Ruta de la imagenn:");
+        initial_val.setDisable(false);
+        type = ComponentSubType.IMG;
+        ancho.setDisable(false);
+        alto.setDisable(false);
+    }
+    
+    
+    @FXML
+    protected void configureCanvas() {
+        titulo.setText("Texto inicial:");
+        initial_val.setDisable(true);
+        type = ComponentSubType.CANVAS;
+        ancho.setDisable(false);
+        alto.setDisable(false);
+    }
+    
+    
     @FXML
     protected void addComp(ActionEvent event) {
         switch (type) {
@@ -156,6 +185,12 @@ public class CoreProgramController {
                 addParagraph2Document();
                 break;
             case TEXTBOX:
+                addButton2Document();
+                break;
+            case IMG:
+                addButton2Document();
+                break;
+            case CANVAS:
                 addButton2Document();
                 break;
         }
@@ -176,8 +211,8 @@ public class CoreProgramController {
                 ComponenType.INPUT,
                 type,
                 initial_val.getText(),
-                200,
-                500);
+                Integer.parseInt(ancho.getEditor().getText()),
+                Integer.parseInt(alto.getEditor().getText()));
         HtmlConstruction.components.add(temporal);
         builder.DocumentConstruction("Testorona");
         //System.out.println(builder.getLink());

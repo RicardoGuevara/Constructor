@@ -8,7 +8,7 @@
 
 Pane{
 -fx-effect: dropshadow(three-pass-box, gray, 10, 0.0, 0, 4);	
-	/* -fx-background-color: gold; */
+	/*-fx-background-color: gray;*/
 }
 
 .button .text:hover{
@@ -22,7 +22,7 @@ Pane{
 	
 	-fx-effect: dropshadow(three-pass-box, gray, 10, 0.0, 0, 4);
 	-fx-background-color: white;
-	-fx-text-fill: black;
+	-fx-text-fill: #212164ff;
 	
 }
 
@@ -32,7 +32,7 @@ Pane{
 	-fx-border-radius: 0;
 	-fx-scale-x: 1.05;
 	-fx-scale-y: 1.05;
-	-fx-background-color: black;
+	-fx-background-color: #212164ff;
 	-fx-text-fill: white;
 	
 }

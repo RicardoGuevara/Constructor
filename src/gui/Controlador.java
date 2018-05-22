@@ -43,7 +43,7 @@ public class Controlador {
 
     @FXML
     public void initialize() {
-        Image im = new Image("http://via.placeholder.com/200x200", false);
+        Image im = new Image("/gui/assets/Logorick.png", false);
         circleImage.setFill(new ImagePattern(im));
         //rootPane.setEffect(new DropShadow(+25d, 0d, +2d, Color.CORAL));
 
