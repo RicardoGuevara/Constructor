@@ -23,7 +23,7 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <menus>
-            <Menu mnemonicParsing="false" text="File">
+            <Menu mnemonicParsing="false" text="Archivo">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
                </items>
@@ -33,9 +33,10 @@
                   <MenuItem mnemonicParsing="false" onAction="#test" text="Recargar" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
+            <Menu mnemonicParsing="false" text="Exportar">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <MenuItem mnemonicParsing="false" onAction="#uploadTest" text="Exportar a Servidor FTP" />
+                  <MenuItem mnemonicParsing="false" onAction="#checkNames" text="Unspecified Action" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
@@ -61,7 +62,7 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <Label fx:id="testLabel" layoutX="19.9" layoutY="19.9" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Parrafo" textAlignment="CENTER" AnchorPane.bottomAnchor="190.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                <Label fx:id="testLabel" layoutX="19.9" layoutY="19.9" onMouseClicked="#addParagraph2Document" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Parrafo" textAlignment="CENTER" AnchorPane.bottomAnchor="190.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                              </children>
                                           </AnchorPane>
                                        </content>

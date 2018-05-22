@@ -54,7 +54,7 @@ public class AddEventController {
         
         //añadir un reload del nuevo inspect
         
-        System.out.println(CoreProgramController.f.toURI().toString());
+        //System.out.println(CoreProgramController.f.toURI().toString());
         
         close();
     }
