@@ -23,6 +23,10 @@ import javafx.scene.web.WebView;
 import htmlConstruction.ComponentSubType.*;
 import htmlConstruction.ComponenType.*;
 import java.awt.Event;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.event.MouseEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 
@@ -45,7 +49,7 @@ public class CoreProgramController {
     private WebView wb;
     private WebEngine we;
     @FXML
-    private Label testLabel;
+    private Label testLabel, selectedLabel;
     private Pane destinyPane;
     @FXML
     private VBox j;
@@ -66,8 +70,24 @@ public class CoreProgramController {
         
         ancho.setDisable(true);
         alto.setDisable(true);
+        /*
+        j.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {
+        @Override
+        public void handle(javafx.scene.input.MouseEvent event) {
+        try
+        {
+        
+        System.out.println(event.getSource().getClass());
+        }
+        catch (Exception e)
+        {
+        System.out.println("not a button");
+        }
         
         
+        }
+        });
+        */
     }
 
     @FXML
@@ -161,19 +181,32 @@ public class CoreProgramController {
     protected void addCompInDocView(HtmlComponent base) {
         System.out.println("Doc List: "+" "+base.getLabelNum()+" "+base.getType());
         Label labelnew = new Label(" "+base.getLabelNum()+" "+base.getType());
+        
+        labelnew.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {
+            @Override
+            public void handle(javafx.scene.input.MouseEvent event) {
+                try
+                {
+                    selectedLabel = labelnew;
+                }
+                catch (Exception e)
+                {
+                    System.out.println("not a label");
+                }
+            }
+        });
+        
         j.getChildren().add(labelnew);
     }
 
     int x,y;
     
     @FXML
-    protected void options()
+    public void options()
     {
-        System.out.println("SI FUNCIONA MK");
-    }
-    
-    private void detect()
-    {
+        //Point locacion = MouseInfo.getPointerInfo().getLocation();
+        System.out.println(selectedLabel.getText());
+        
         
     }
     
