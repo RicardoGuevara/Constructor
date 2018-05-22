@@ -153,7 +153,7 @@
                         <Spinner id="ancho" fx:id="ancho" editable="true" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="70.0" />
                         <Spinner id="alto" fx:id="alto" editable="true" layoutX="100.0" layoutY="142.0" prefHeight="25.0" prefWidth="67.0" />
                         <Button id="agregar" layoutX="17.0" layoutY="262.0" mnemonicParsing="false" onAction="#addComp" prefHeight="39.0" prefWidth="169.0" text="Agregar" />
-                        <TextField layoutX="16.0" layoutY="309.0" prefHeight="25.0" prefWidth="170.0" />
+                        <TextField fx:id="style" layoutX="16.0" layoutY="309.0" prefHeight="25.0" prefWidth="170.0" text="Style" />
                         <Button fx:id="vp" layoutX="17.0" layoutY="210.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="169.0" text="Vsta previa" />
                      </children>
                   </Pane>

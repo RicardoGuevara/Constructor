@@ -122,14 +122,15 @@ public class HtmlConstruction implements Runnable {
         escribir.write("    <title>" + this.title + "</title>");
         escribir.newLine();
         
-        escribir.write(leer.readLine());
+        String t= leer.readLine();
+        
+        while(t!=null)
+        {
+        System.out.println(t);
+        escribir.write(t);
         escribir.newLine();
-        escribir.write(leer.readLine());
-        escribir.newLine();
-        escribir.write(leer.readLine());
-        escribir.newLine();
-        escribir.write(leer.readLine());
-        escribir.newLine();
+        t=leer.readLine();
+        }
         
         leer.close();
         escribir.close();

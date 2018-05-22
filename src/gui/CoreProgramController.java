@@ -68,7 +68,7 @@ public class CoreProgramController {
     @FXML
     private VBox j;
     @FXML
-    private TextField initial_val;
+    private TextField initial_val,style;
     @FXML
     private Spinner ancho,
                     alto;
@@ -197,7 +197,7 @@ public class CoreProgramController {
     }
     @FXML
     protected void addParagraph2Document() {
-        HtmlComponent temporal = new HtmlComponent(ComponenType.OUTPUT, type, initial_val.getText());
+        HtmlComponent temporal = new HtmlComponent(ComponenType.OUTPUT, type, initial_val.getText(),style.getText());
         HtmlConstruction.components.add(temporal);
         builder.DocumentConstruction("Testorona");
         //System.out.println(builder.getLink());
@@ -212,7 +212,7 @@ public class CoreProgramController {
                 type,
                 initial_val.getText(),
                 Integer.parseInt(ancho.getEditor().getText()),
-                Integer.parseInt(alto.getEditor().getText()));
+                Integer.parseInt(alto.getEditor().getText()),style.getText());
         HtmlConstruction.components.add(temporal);
         builder.DocumentConstruction("Testorona");
         //System.out.println(builder.getLink());
