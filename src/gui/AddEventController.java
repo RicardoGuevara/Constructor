@@ -14,6 +14,7 @@ import htmlConstruction.HtmlConstruction;
 import htmlConstruction.JsConstruction;
 import htmlConstruction.JsEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import visuals.ProjectScreen;
 
@@ -26,6 +27,9 @@ public class AddEventController {
     @FXML
     private Label titulo;
     
+    @FXML
+    private ComboBox    events,
+                        functions;
     
     private HtmlComponent hc;
     
@@ -35,6 +39,7 @@ public class AddEventController {
         titulo.setText(CoreProgramController.selectedLabel.getText());
         int id = HtmlConstruction.subsId(titulo.getText());
         hc= HtmlConstruction.searchId(id);
+        
     }
     
     @FXML
