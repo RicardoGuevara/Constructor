@@ -69,8 +69,12 @@ public class CoreProgramController {
     private TextField initial_val;
     @FXML
     private Spinner ancho,
-            alto;
-
+                    alto;
+    
+    
+    
+    
+    
     @FXML
     public void initialize() {
 
@@ -79,7 +83,24 @@ public class CoreProgramController {
 
         ancho.setDisable(true);
         alto.setDisable(true);
-
+        /*
+        j.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {
+        @Override
+        public void handle(javafx.scene.input.MouseEvent event) {
+        try
+        {
+        
+        System.out.println(event.getSource().getClass());
+        }
+        catch (Exception e)
+        {
+        System.out.println("not a button");
+        }
+        
+        
+        }
+        });
+        */
     }
 
     @FXML
@@ -165,20 +186,38 @@ public class CoreProgramController {
 
     //@FXML
     protected void addCompInDocView(HtmlComponent base) {
-        System.out.println("Doc List: " + " " + base.getLabelNum() + " " + base.getType());
-        Label labelnew = new Label(" " + base.getLabelNum() + " " + base.getType());
+        System.out.println("Doc List: "+" "+base.getLabelNum()+" "+base.getType());
+        Label labelnew = new Label(" "+base.getLabelNum()+" "+base.getType());
+        
+        labelnew.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {
+            @Override
+            public void handle(javafx.scene.input.MouseEvent event) {
+                try
+                {
+                    selectedLabel = labelnew;
+                }
+                catch (Exception e)
+                {
+                    System.out.println("not a label");
+                }
+            }
+        });
+        
         j.getChildren().add(labelnew);
     }
 
-  static Stage primaryStage;
-
+    static Stage primaryStage;
+    
     @FXML
-    protected void options() throws IOException{
-                Point locacion = MouseInfo.getPointerInfo().getLocation();
-       //System.out.println(selectedLabel.getText());
-       
+    public void options() throws IOException
+    {
+        Point locacion = MouseInfo.getPointerInfo().getLocation();
+        //System.out.println(selectedLabel.getText());
+        
         OptionsController.x = locacion.x;
         OptionsController.y = locacion.y;
+        
+        
         
         primaryStage = new Stage();
         primaryStage.initStyle(StageStyle.TRANSPARENT);
