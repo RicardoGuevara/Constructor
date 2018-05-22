@@ -70,10 +70,10 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <Label fx:id="saltoDeLinea" layoutX="10.0" layoutY="64.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="salto de linea" textAlignment="CENTER" />
+                                                <Label fx:id="saltoDeLinea" layoutX="10.0" layoutY="64.0" onMouseClicked="#configureLB" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="salto de linea" textAlignment="CENTER" />
                                                 <Label fx:id="testLabel1" onMouseClicked="#configureButton" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Boton" textAlignment="CENTER" AnchorPane.bottomAnchor="190.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                 <Label fx:id="testLabel2" layoutX="9.0" layoutY="28.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Parrafo" textAlignment="CENTER" AnchorPane.bottomAnchor="170.65444787074748" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
-                                                <Label fx:id="addTextBox" layoutX="10.0" layoutY="91.0" onMouseClicked="#configureParagraph" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Text box" textAlignment="CENTER" />
+                                                <Label fx:id="addTextBox" layoutX="10.0" layoutY="91.0" onMouseClicked="#configureTB" prefHeight="27.0" prefWidth="182.0" styleClass="clickable" text="Text box" textAlignment="CENTER" />
                                              </children>
                                           </AnchorPane>
                                        </content>
@@ -106,7 +106,7 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <VBox fx:id="j" layoutX="1.0" layoutY="-1.0" prefHeight="262.0" prefWidth="202.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                <VBox fx:id="j" onMouseClicked="#options" layoutX="1.0" layoutY="-1.0" prefHeight="262.0" prefWidth="202.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                              </children>
                                           </AnchorPane>
                                        </content>

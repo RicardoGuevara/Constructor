@@ -34,20 +34,15 @@ public class HtmlConstructor {
         /*
         try {
         System.out.println("prueba2");
-        mail.Upload up = new mail.Upload("ftp.alguienmore.com","alguienmore.com","2be548dd514c");
+        mail.Upload up = new mail.Upload("ftp.alguienmore.com","alguienmore","2be548dd514c");
         up.inUpload("prro.html");
         //System.out.println("prueba2");
-        } catch (Exception e) {
-        }
-        
-        try {
-        System.out.println("prueba3");
-        mail.Upload up = new mail.Upload("http:\\www.alguienmore.com","alguienmore.com","2be548dd514c");
-        up.inUpload("prro.html");
-        //System.out.println("prueba3");
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
         }
         */
+        
+        
     }
 
 //REGISTRO Y VERIFICACIÓN_______________________________________________________

@@ -22,6 +22,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import htmlConstruction.ComponentSubType.*;
 import htmlConstruction.ComponenType.*;
+import java.awt.Event;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 
@@ -79,13 +80,28 @@ public class CoreProgramController {
     }
 
     @FXML 
+    protected void configureLB()
+    {
+        type = ComponentSubType.LINEBREAK;
+        ancho.setDisable(true);
+        alto.setDisable(true);
+    }
+    
+    @FXML 
+    protected void configureTB()
+    {
+        type = ComponentSubType.TEXTBOX;
+        ancho.setDisable(false);
+        alto.setDisable(false);
+    }
+    
+    @FXML 
     protected void configureParagraph()
     {
         type = ComponentSubType.PARAGRAPH;
         ancho.setDisable(true);
         alto.setDisable(true);
     }
-    
     
     @FXML 
     protected void configureButton()
@@ -105,6 +121,14 @@ public class CoreProgramController {
                 break;
             case BUTTON:
                 addButton2Document();
+                break;
+            case LINEBREAK:
+                initial_val.setText("   ");
+                addParagraph2Document();
+                break;
+            case TEXTBOX:
+                addButton2Document();
+                break;
         }
     }
     
@@ -121,10 +145,10 @@ public class CoreProgramController {
     protected void addButton2Document(){
         HtmlComponent temporal = new HtmlComponent(
                             ComponenType.INPUT, 
-                            ComponentSubType.BUTTON, 
+                            type, 
                             initial_val.getText(), 
-                            300, 
-                            200 );
+                            200, 
+                            500 );
         HtmlConstruction.components.add(temporal);
         builder.DocumentConstruction("Testorona");
         //System.out.println(builder.getLink());
@@ -140,6 +164,19 @@ public class CoreProgramController {
         j.getChildren().add(labelnew);
     }
 
+    int x,y;
+    
+    @FXML
+    protected void options()
+    {
+        System.out.println("SI FUNCIONA MK");
+    }
+    
+    private void detect()
+    {
+        
+    }
+    
     @FXML
     protected void openDPane(ActionEvent event) {
 
