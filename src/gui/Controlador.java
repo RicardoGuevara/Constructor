@@ -19,6 +19,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -36,7 +37,7 @@ public class Controlador {
     private Button  login_button,
                     register_button;
     @FXML
-    private Circle circleImage;
+    private Rectangle circleImage;
     private Pane rootPane;
 
     GUILoader iLoader;

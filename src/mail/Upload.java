@@ -10,6 +10,7 @@ package mail;
  * @author rpayan
  */
 import htmlConstruction.HtmlConstruction;
+import gui.CoreProgramController;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -19,8 +20,8 @@ import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
 
 public class Upload {
-
-    HtmlConstruction builder = new HtmlConstruction();
+    
+    HtmlConstruction builder;
     private String serverName,
             user,
             pass;
@@ -36,46 +37,46 @@ public class Upload {
         try {
             client.connect(serverName);
             boolean login = client.login(user, pass);
-            
 
             if (login) {
                 System.out.println("Iniciando sesión Satisfactoriamente");
                 int replay = client.getReplyCode();
-                FTPFile [] test = client.listDirectories();
-                for (int i = 0; i < test.length; i++) {
-                    System.out.println(test[i]);
-                    if (test[i].toString().contains("public_html")){
-                        
-                    }
-                }
+                //FTPFile[] test = client.listDirectories("/public_html/");
+//                for (int i = 0; i < test.length; i++) {
+//                    System.out.println(test[i]);
+//                    if (test[i].toString().contains(builder.getTitle())){
+//                        dir_existente = true;
+//                    }
+//                }
                 if (FTPReply.isPositiveCompletion(replay)) {
                     File file = new File(ruta);
-                    FileInputStream input = new FileInputStream(file);
-                    client.setFileType(FTP.BINARY_FILE_TYPE);
-
-                    client.enterLocalPassiveMode();
-                    System.out.println("Subió satisfactoriamente el archivo");
-                    boolean dir_creado;
-                    if (dir_creado = client.makeDirectory("/public_html/"+builder.getTitle()+"/")){
-                    
-                        System.out.println("Directorio creado");
-                    }else if(client.mlistDir("/public_html/").toString().contains("itstimetodiepls/")){
-                        System.out.println("Directorio ya existente");
+                    try (FileInputStream input = new FileInputStream(file)) {
+                        client.setFileType(FTP.BINARY_FILE_TYPE);
+                        
+                        client.enterLocalPassiveMode();
+                        System.out.println("Subió satisfactoriamente el archivo");
+                        boolean dir_creado;
+                        System.out.println(builder.getTitle());
+                        if (client.makeDirectory("/public_html/" + builder.getTitle() + "/")) {
+                            
+                            System.out.println("Directorio creado");
+                        } else if (dir_existente) {
+                            System.out.println("Directorio ya existente");
+                        } else {
+                            System.out.println("Error al crear directorio");
+                        }
+                        
+                        if (!client.storeFile("/public_html/" + builder.getTitle() + "/" + file.getName(), input)) {
+                            System.out.println("Subida fallida!");
+                        }
                     }
-                    
-                    else{
-                        System.out.println("Error al crear directorio");
-                    }
-                    if (!client.storeFile("/public_html/"+builder.getTitle()+"/"+file.getName(), input)) {
-                        System.out.println("Subida fallida!");
-                    }
-                    input.close();
                 }
                 // retorna true al cerrar sesiòn
                 boolean logout = client.logout();
 
                 if (logout) {
                     System.out.println("Salir del servidor FTP");
+
                 }
             } else {
                 System.out.println("Falló inciar sesión");
@@ -86,10 +87,12 @@ public class Upload {
             try {
                 // Cierra la conexión al servidor FTP
                 client.disconnect();
+                dir_existente = false;
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
+    boolean dir_existente;
 }
