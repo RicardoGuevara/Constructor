@@ -123,6 +123,29 @@ public class HtmlComponent {
         HtmlComponent.idComplement++;
     }
  
+    public HtmlComponent(ComponenType component, ComponentSubType type, String initialValue) {
+        this.component = component;
+        this.type = type;
+        this.initialValue=initialValue;
+        this.elementId = "component"+String.valueOf(idComplement);
+        this.labelNum=idComplement;
+        
+        HtmlComponent.idComplement++;
+    }
+    
+    public HtmlComponent(ComponenType component, ComponentSubType type, String initialValue, int width, int higth) {
+        this.component = component;
+        this.type = type;
+        this.initialValue=initialValue;
+        this.heigth=higth;
+        this.width =width;
+        this.elementId = "component"+String.valueOf(idComplement);
+        this.labelNum=idComplement;
+        
+        HtmlComponent.idComplement++;
+    }
+    
+    
     public void setInitialValue(String initialValue) {
         this.initialValue = initialValue;
     }
