@@ -1,13 +1,12 @@
 #leftAnchor {
 
-	-fx-background-color: azure;
+	-fx-background-color:  #99ff99;
 
 }
 
 #topAnchor {
 
-	-fx-background-color: blue;
-
+	-fx-background-color: #00cc66;
 }
 HBox {
 	-fx-spacing: 35;
@@ -18,7 +17,7 @@ HBox Label {
 
 	-fx-padding: 0;
 	-fx-font-size: 25;
-	
+
 }
 
 HBox Label:hover{

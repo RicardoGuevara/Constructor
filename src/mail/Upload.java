@@ -56,7 +56,7 @@ public class Upload {
                         client.enterLocalPassiveMode();
                         System.out.println("Subió satisfactoriamente el archivo");
                         boolean dir_creado;
-                        System.out.println(builder.getTitle());
+//                        System.out.println(builder.getTitle());
                         if (client.makeDirectory("/public_html/" + builder.getTitle() + "/")) {
                             
                             System.out.println("Directorio creado");
