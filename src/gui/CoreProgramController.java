@@ -53,7 +53,7 @@ public class CoreProgramController {
 
     Upload upper;
 
-    HtmlConstruction builder = new HtmlConstruction();
+    public HtmlConstruction builder = new HtmlConstruction();
     ComponentSubType type = ComponentSubType.PARAGRAPH;
 
     GUILoader iLoader;
@@ -318,6 +318,10 @@ public class CoreProgramController {
     @FXML
     protected void close(ActionEvent event) throws Exception {
         iLoader = new GUILoader("homescreen", "Home Screen");
+    }
+    
+    public HtmlConstruction getBuilder(){
+        return builder;
     }
 
 }

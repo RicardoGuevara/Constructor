@@ -48,7 +48,7 @@ public class HtmlConstruction implements Runnable {
     /**
      * construct a document whit a personalizated title
      *
-     * @param title
+     * @param doctitle 
      */
     public void DocumentConstruction(String doctitle) {
 

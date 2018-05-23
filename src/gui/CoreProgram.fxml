@@ -28,6 +28,11 @@
                   <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
                </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="Proyecto">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
             <Menu mnemonicParsing="false" text="Navegador">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#test" text="Recargar" />
@@ -39,7 +44,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#checkNames" text="Unspecified Action" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Help">
+            <Menu mnemonicParsing="false" text="Ayuda">
                <items>
                   <MenuItem mnemonicParsing="false" text="About" />
                </items>
@@ -107,14 +112,9 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <VBox fx:id="j" onMouseClicked="#options"  layoutX="1.0" layoutY="-1.0" prefHeight="262.0" prefWidth="202.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                <VBox fx:id="j" layoutX="1.0" layoutY="-1.0" onMouseClicked="#options" prefHeight="262.0" prefWidth="202.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                              </children>
                                           </AnchorPane>
-                                       </content>
-                                    </TitledPane>
-                                    <TitledPane animated="false" text="TOBECONSIDERED">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                        </content>
                                     </TitledPane>
                                  </panes>

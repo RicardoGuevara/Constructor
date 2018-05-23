@@ -1,38 +1,38 @@
 .clickable {
-	
+
 	-fx-text-fill: black;
-	
-	
+
+
 }
 
  .clickable{
-	
+
 	-fx-graphic: url("http://via.placeholder.com/15x15");
-	
- } 
+
+ }
 
  .clickable .image-view{
-	 -fx-background-color: "#FFF"; 
-	 
+	 -fx-background-color: "#FFF";
+
  }
 
 
 .clickable:hover {
+
 	
-	
-	-fx-background-color: gold;
-	
+	-fx-background-color: #ccffe6;
+
 }
 
 .clickable:pressed {
 	-fx-background-color: azure;
-	
+
 }
 
 .clickable:focused{
-	
+
 	-fx-background-color: gray;
-	
+
 }
 
 #webBackgroundTest {
