@@ -20,7 +20,7 @@
       </AnchorPane>
    </left>
    <top>
-      <AnchorPane id="topAnchor" prefHeight="76.0" prefWidth="1190.0" style="-fx-background-color: #00cc66;" BorderPane.alignment="CENTER">
+      <AnchorPane id="topAnchor" prefHeight="76.0" prefWidth="1190.0" BorderPane.alignment="CENTER">
          <children>
             <HBox id="box" layoutX="200.0" layoutY="25.0" prefHeight="36.0" prefWidth="568.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="423.0" AnchorPane.topAnchor="25.0">
                <children>
