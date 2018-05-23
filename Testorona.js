@@ -1,5 +1,4 @@
 var component0 = document.getElementById('component0');
-var component1 = document.getElementById('component1');
 component0.addEventListener('click',sayHello);
 function sayError(evt)
 {

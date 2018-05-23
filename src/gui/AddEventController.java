@@ -40,6 +40,8 @@ public class AddEventController {
         int id = HtmlConstruction.subsId(titulo.getText());
         hc= HtmlConstruction.searchId(id);
         
+        events.getItems().addAll(EventType.values());
+        functions.getItems().addAll(FunctionType.values());
     }
     
     @FXML
@@ -68,12 +70,12 @@ public class AddEventController {
     
     private FunctionType determinarFuncion()
     {
-        return FunctionType.WELCOMEALERT;
+        return (FunctionType) functions.getValue();
     }
     
     private EventType determinarEvento()
     {
-        return EventType.CLICK;
+        return (EventType) events.getValue();
     }
     
 }
