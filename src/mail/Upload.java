@@ -57,7 +57,7 @@ public class Upload {
                         System.out.println("Subió satisfactoriamente el archivo");
                         boolean dir_creado;
 //                        System.out.println(builder.getTitle());
-                        if (client.makeDirectory("/public_html/" + builder.getTitle() + "/")) {
+                        if (client.makeDirectory("/public_html/" /*+ "index" + "/"*/)) {
                             
                             System.out.println("Directorio creado");
                         } else if (dir_existente) {
@@ -66,7 +66,7 @@ public class Upload {
                             System.out.println("Error al crear directorio");
                         }
                         
-                        if (!client.storeFile("/public_html/" + builder.getTitle() + "/" + file.getName(), input)) {
+                        if (!client.storeFile("/public_html/" /*+ "index" + "/"*/ + file.getName(), input)) {
                             System.out.println("Subida fallida!");
                         }
                     }

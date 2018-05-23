@@ -9,6 +9,8 @@ package htmlConstruction;
  *
  * @author Bloque G
  */
+
+import htmlconstructor.HtmlConstructor;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -116,10 +118,10 @@ public class HtmlConstruction implements Runnable {
         escribir.write("<head>");
         escribir.newLine();
 
-        escribir.write("<meta charset ='utf-8' / >");
+        escribir.write("<meta charset =\"UTF-8\" / >");
         escribir.newLine();
 
-        escribir.write("    <title>" + this.title + "</title>");
+        escribir.write("    <title>" + HtmlConstructor.user + "</title>");
         escribir.newLine();
         
         String t= leer.readLine();

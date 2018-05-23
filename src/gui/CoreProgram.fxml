@@ -152,9 +152,9 @@
                         <Label layoutX="108.0" layoutY="111.0" text="Alto" />
                         <Spinner id="ancho" fx:id="ancho" editable="true" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="70.0" />
                         <Spinner id="alto" fx:id="alto" editable="true" layoutX="100.0" layoutY="142.0" prefHeight="25.0" prefWidth="67.0" />
-                        <Button id="agregar" layoutX="17.0" layoutY="262.0" mnemonicParsing="false" onAction="#addComp" prefHeight="39.0" prefWidth="169.0" text="Agregar" />
-                        <TextField fx:id="style" layoutX="16.0" layoutY="309.0" prefHeight="25.0" prefWidth="170.0" text="Style" />
-                        <Button fx:id="vp" layoutX="17.0" layoutY="210.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="169.0" text="Vsta previa" />
+                        <Button id="agregar" layoutX="13.0" layoutY="240.0" mnemonicParsing="false" onAction="#addComp" prefHeight="39.0" prefWidth="169.0" text="Agregar" />
+                        <TextField fx:id="style" layoutX="12.0" layoutY="195.0" prefHeight="25.0" prefWidth="170.0" text="Style" />
+                        <TextField fx:id="rut" editable="false" layoutX="14.0" layoutY="297.0" prefHeight="25.0" prefWidth="168.0" />
                      </children>
                   </Pane>
                </children>
@@ -167,7 +167,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TextArea id="ht" prefHeight="200.0" prefWidth="200.0" />
+                                    <TextArea id="ht" prefHeight="324.0" prefWidth="200.0" />
                                  </children>
                               </AnchorPane>
                         </content>
@@ -176,7 +176,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="329.0" prefWidth="200.0">
                                  <children>
-                                    <TextArea id="js" prefHeight="200.0" prefWidth="200.0" />
+                                    <TextArea id="js" prefHeight="326.0" prefWidth="200.0" />
                                  </children>
                               </AnchorPane>
                         </content>

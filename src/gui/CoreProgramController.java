@@ -29,6 +29,10 @@ import java.awt.Event;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -36,9 +40,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Spinner;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import static visuals.ProjectScreen.title;
 
 /**
  *
@@ -68,12 +74,13 @@ public class CoreProgramController {
     @FXML
     private VBox j;
     @FXML
-    private TextField initial_val,style;
+    private TextField initial_val,style,rut;
     @FXML
     private Spinner ancho,
                     alto;
     
-    
+    @FXML
+    private TextArea ht,js;
     
     
     
@@ -194,6 +201,16 @@ public class CoreProgramController {
                 addButton2Document();
                 break;
         }
+        
+        try 
+        {
+            reloadInspectHtml();
+            reloadInspectJs();
+        }
+        catch (Exception e) 
+        {
+            System.out.println("no fue posible recargar los ducumentos");
+        }
     }
     @FXML
     protected void addParagraph2Document() {
@@ -220,6 +237,7 @@ public class CoreProgramController {
         f = new File(builder.getLink());
         we.load(f.toURI().toString());
         System.out.println(f.toURI().toString());
+        rut.setText(f.toURI().toString());
     }
 
     //@FXML
@@ -290,7 +308,9 @@ public class CoreProgramController {
 
         try {
             upper = new Upload("ftp.alguienmore.com", "alguienmore.com", "2be548dd514c");
-            upper.inUpload(/*builder.getLink()*/f.getAbsolutePath());
+            upper.inUpload("index.html");
+            upper = new Upload("ftp.alguienmore.com", "alguienmore.com", "2be548dd514c");
+            upper.inUpload("Testorona.js");
             Alert a = new Alert(Alert.AlertType.CONFIRMATION,"Proyecto subido con éxito");
             a.showAndWait();
         } catch (Exception e) 
@@ -317,11 +337,62 @@ public class CoreProgramController {
 
     @FXML
     protected void close(ActionEvent event) throws Exception {
+        
+        BufferedWriter b=new BufferedWriter(new FileWriter(f.getAbsolutePath()));
+        b.write("");
+        b.close();
         iLoader = new GUILoader("homescreen", "Home Screen");
     }
     
     public HtmlConstruction getBuilder(){
         return builder;
     }
+    
+    private void reloadInspectHtml()
+            throws IOException
+    {
+        ht.setText("");
+        
+        BufferedReader inspect = new BufferedReader(new FileReader(f.getAbsolutePath()));
+        
+            String linea = inspect.readLine();
+            
+            while(linea!=null)
+            {
+                try 
+                {
+                    ht.appendText(linea+"\n");
+                    linea = inspect.readLine();    
+                } catch (Exception e) {
+                }
+                
+            }
+        
+        inspect.close();
+    }
+    
+    private void reloadInspectJs()
+            throws IOException
+    {
+        js.setText("");
+        
+        BufferedReader inspect = new BufferedReader(new FileReader("/Testorona.js"));
+        
+            String linea = inspect.readLine();
+            
+            while(linea!=null)
+            {
+                try 
+                {
+                    js.appendText(linea+"\n");
+                    linea = inspect.readLine();
+                } catch (Exception e) {
+                }
+                
+            }
+        
+        inspect.close();
+    }
+    
 
 }
