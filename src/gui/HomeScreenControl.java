@@ -38,7 +38,7 @@ public class HomeScreenControl{
     {
         iLoader = new GUILoader("Login", "log in");
         HtmlConstructor.user = new String();
-        System.out.println("cierre de seción");
+        //System.out.println("cierre de seción");
     }
     
     @FXML
