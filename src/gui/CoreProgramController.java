@@ -42,8 +42,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import mail.MailModel;
+import mail.MailService;
 import static visuals.ProjectScreen.title;
 
 /**
@@ -335,6 +338,20 @@ public class CoreProgramController {
         destinyPane.setVisible(true);
     }
 
+    @FXML
+    protected void sendme(ActionEvent event) throws Exception {
+        
+        MailService ms = new MailService();
+        TextInputDialog ti = new TextInputDialog("Dirección de envío");
+        ti.showAndWait();
+        
+        String destiny = ti.getResult();
+        ms.sendMail(new MailModel("tu página","index.html","Esta es tu página, gracias por usar nuestro software",destiny));
+        
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION,"Mensaje enviado");
+        a.showAndWait();
+    }
+    
     @FXML
     protected void close(ActionEvent event) throws Exception {
         

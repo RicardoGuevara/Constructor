@@ -28,8 +28,8 @@ public class MailModel {
     }
 
     public MailModel(String subject, String fileUrl, String msj, String destiny) {
-        this.userName= "WBSprojectman";
-        this.password= "IKARUS FALLING";
+        this.userName= "htmlconstruc@gmail.com";
+        this.password= "CONTRASENIADEMIERDA";
         this.subject = subject;
         this.fileUrl = fileUrl;
         this.msj = msj;
@@ -37,8 +37,8 @@ public class MailModel {
     }
 
     public MailModel(String subject, String msj, String destiny) {
-        this.userName= "WBSprojectman";
-        this.password= "IKARUS FALLING";
+        this.userName= "htmlconstruc@gmail.com";
+        this.password= "CONTRASENIADEMIERDA";
         this.subject = subject;
         this.fileUrl = "";
         this.msj = msj;
@@ -47,8 +47,8 @@ public class MailModel {
     
     public MailModel(String destiny) 
     {
-        this.userName= "WBSprojectman";
-        this.password= "IKARUS FALLING";
+        this.userName= "htmlconstruc@gmail.com";
+        this.password= "CONTRASENIADEMIERDA";
         this.subject = "CORREO DE PRUEVA";
         this.fileUrl = "adp.txt";
         this.msj = "ESTE ES UN CORREO DE PRUEVA ENVIADO DESDE JAVA";
