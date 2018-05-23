@@ -290,7 +290,7 @@ public class CoreProgramController {
 
         try {
             upper = new Upload("ftp.alguienmore.com", "alguienmore.com", "2be548dd514c");
-            upper.inUpload(builder.getLink());
+            upper.inUpload(/*builder.getLink()*/f.getAbsolutePath());
             Alert a = new Alert(Alert.AlertType.CONFIRMATION,"Proyecto subido con éxito");
             a.showAndWait();
         } catch (Exception e) 
