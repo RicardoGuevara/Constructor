@@ -4,17 +4,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="245.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.InfrmationController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="245.0" style="-fx-border-color: #99ff99;" styleClass="test" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.InfrmationController">
    <children>
-      <Label fx:id="titulo" layoutX="20.0" layoutY="14.0" text="Atributos" />
-      <Button layoutX="60.0" layoutY="302.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="125.0" text="OK" onAction="#close"  />
+      <Label fx:id="titulo" layoutX="81.0" layoutY="14.0" text="Atributos">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Button layoutX="60.0" layoutY="302.0" mnemonicParsing="false" onAction="#close" prefHeight="38.0" prefWidth="125.0" text="OK" />
       <Label layoutX="108.0" layoutY="58.0" text="Texto" />
-      <TextField fx:id="texto" editable="false" layoutX="18.0" layoutY="91.0" prefHeight="25.0" prefWidth="209.0" />
+      <TextField fx:id="texto" layoutX="18.0" layoutY="91.0" prefHeight="25.0" prefWidth="209.0" />
       <Label layoutX="78.0" layoutY="140.0" text="ComponentType" />
-      <TextField fx:id="ct"  layoutX="18.0" layoutY="168.0" prefHeight="25.0" prefWidth="209.0" />
+      <TextField fx:id="ct" editable="false" layoutX="18.0" layoutY="168.0" prefHeight="25.0" prefWidth="209.0" />
       <Label layoutX="109.0" layoutY="209.0" text="Diseño" />
-      <TextField fx:id="estilo"  layoutX="18.0" layoutY="238.0" prefHeight="25.0" prefWidth="209.0" />
+      <TextField fx:id="estilo" layoutX="18.0" layoutY="238.0" prefHeight="25.0" prefWidth="209.0" />
    </children>
 </Pane>

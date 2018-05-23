@@ -36,14 +36,20 @@ public class InfrmationController {
         
         texto.setText(hc.getInitialValue());
         ct.setText(hc.getType().name());
-        
+        estilo.setText(hc.getClas());
     }
     
     @FXML
     protected void close()
     {
+        hc.setInitialValue(texto.getText());
+        hc.setClas(estilo.getText());
+        
+        CoreProgramController.builder.DocumentConstruction("Testorona");
+        
         OptionsController.primaryStage.close();
     }
+    
     
     
 }

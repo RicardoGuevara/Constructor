@@ -53,7 +53,7 @@ public class CoreProgramController {
 
     Upload upper;
 
-    public HtmlConstruction builder = new HtmlConstruction();
+    public static HtmlConstruction builder = new HtmlConstruction();
     ComponentSubType type = ComponentSubType.PARAGRAPH;
 
     GUILoader iLoader;

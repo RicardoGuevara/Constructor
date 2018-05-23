@@ -42,7 +42,7 @@ public class HtmlComponent {
         switch(this.type)
         {
             case PARAGRAPH:
-                retorno= ("        <p>"+this.initialValue+" class="+"\""+this.clas+"\""+"</p>");
+                retorno= ("        <p class="+"\""+this.clas+"\" >"+this.initialValue+"</p>");
                 break;
             case CANVAS:
                 retorno= ("        <canvas "+" width=\""+this.width+"\" height=\""+this.heigth+"\" id='"+this.elementId+" class="+"\""+this.clas+"\""+"' />");
@@ -144,6 +144,15 @@ public class HtmlComponent {
         
         HtmlComponent.idComplement++;
     }
+
+    public String getClas() {
+        return clas;
+    }
+
+    public void setClas(String clas) {
+        this.clas = clas;
+    }
+    
     
     
     public void setInitialValue(String initialValue) {
